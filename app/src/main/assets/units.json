@@ -1,0 +1,54 @@
+{
+  "Units" : [
+    {
+      "id" : "unit1",
+      "name": "Evaluating Sources",
+      "progress": 0,
+      "lessons": [
+        {
+          "id" : "Introduction",
+          "lesson": "Introduction",
+          "progress": 0
+        },
+        {
+          "id" : "LateralReading",
+          "lesson": "Lateral Reading",
+          "progress": 0
+        },
+        {
+          "id" : "EvaluatingPhotosAndVideos",
+          "lesson": "Evaluating Photos and Videos",
+          "progress": 0
+        },
+        {
+          "id" : "EvaluatingDataAndInfographics",
+          "lesson": "Evaluating Data and Infographics",
+          "progress": 0
+        },
+        {
+          "id" : "ClickRestraint",
+          "lesson": "Click Restraint",
+          "progress": 0
+        },
+        {
+          "id" : "SocialMedia",
+          "lesson": "Social Media",
+          "progress": 0
+        }
+      ]
+    },
+
+    {
+      "id" : "unit2",
+      "name" : "In Progress",
+      "progress" : 0,
+      "lessons" : [
+        {
+
+        }
+      ]
+    }
+
+  ]
+
+}
