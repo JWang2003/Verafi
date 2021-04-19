@@ -6,6 +6,8 @@ import org.json.JSONObject;
 public class Section {
     String type;
     String name;
+
+    // Break down JSON into class inside this class
     JSONObject content;
     JSONArray choices;
     JSONArray correct;
