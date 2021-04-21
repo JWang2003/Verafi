@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Misinformation">
-        <activity android:name=".FactCheckPage"></activity>
+        <activity android:name=".QuizPage"></activity>
+        <activity android:name=".FactCheckPage" />
         <activity android:name=".LessonPage" />
         <activity android:name=".UnitPage" />
         <activity android:name=".MainActivity">
@@ -22,6 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
