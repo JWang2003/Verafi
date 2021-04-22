@@ -22,7 +22,6 @@ public class Unit implements Parcelable {
         id = in.readString();
         name = in.readString();
         progress = in.readInt();
-        lessons = in.readString();
     }
 
     public static final Creator<Unit> CREATOR = new Creator<Unit>() {
@@ -57,6 +56,5 @@ public class Unit implements Parcelable {
         dest.writeString(id);
         dest.writeString(name);
         dest.writeInt(progress);
-        dest.writeString(lessons.toString());
     }
 }

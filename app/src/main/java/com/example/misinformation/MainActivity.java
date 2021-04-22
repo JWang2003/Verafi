@@ -57,7 +57,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, UnitPage.class);
-                intent.putExtra("unit", units.get(0));
+                Unit selectedUnit = units.get(0);
+                intent.putExtra("unit", selectedUnit);
+                intent.putExtra("jsonArray", selectedUnit.lessons.toString());
                 startActivity(intent);
             }
         });

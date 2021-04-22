@@ -44,6 +44,24 @@ public class DataAccess {
         return sections;
     }
 
+    public ArrayList<String> getSectionNames(String lessonName) {
+        ArrayList<String> names = new ArrayList<>();
+        try {
+            JSONObject jsonObject = new JSONObject(JsonLessonFromAsset());
+            JSONArray jsonAllSections = jsonObject.getJSONArray(lessonName);
+
+            for (int i = 0; i < jsonAllSections.length(); i++) {
+                JSONObject jsonSection = jsonAllSections.getJSONObject(i);
+                names.add(jsonSection.getString("name"));
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return names;
+    }
+
+
     public ArrayList<Unit> getUnits() {
         ArrayList<Unit> units = new ArrayList<Unit>();
         try {
