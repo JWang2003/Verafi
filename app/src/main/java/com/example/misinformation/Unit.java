@@ -1,8 +1,11 @@
 package com.example.misinformation;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import org.json.JSONArray;
 
-public class Unit {
+public class Unit implements Parcelable {
     String id;
     String name;
     int progress;
@@ -15,6 +18,25 @@ public class Unit {
         this.lessons = lessons;
     }
 
+    protected Unit(Parcel in) {
+        id = in.readString();
+        name = in.readString();
+        progress = in.readInt();
+        lessons = in.readString();
+    }
+
+    public static final Creator<Unit> CREATOR = new Creator<Unit>() {
+        @Override
+        public Unit createFromParcel(Parcel in) {
+            return new Unit(in);
+        }
+
+        @Override
+        public Unit[] newArray(int size) {
+            return new Unit[size];
+        }
+    };
+
     @Override
     public String toString() {
         return "Unit{" +
@@ -23,5 +45,18 @@ public class Unit {
                 ", progress=" + progress +
                 ", lessons=" + lessons +
                 '}';
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(name);
+        dest.writeInt(progress);
+        dest.writeString(lessons.toString());
     }
 }

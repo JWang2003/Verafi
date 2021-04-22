@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     FactCheckAPI factCheck;
     Button submitButton;
     EditText claim;
+    DataAccess dataAccess;
+    ArrayList<Unit> units;
     Button nextPage;
     TextView text;
 
@@ -34,24 +36,31 @@ public class MainActivity extends AppCompatActivity {
         connectXML();
         connectButtons();
 
+        dataAccess = new DataAccess(MainActivity.this);
+        units = dataAccess.getUnits();
+        System.out.println(units);
+        System.out.println("PRINTED OUT UNITS");
+
     }
 
     private void connectXML() {
 
-//        nextPage = findViewById(R.id.button);
+        nextPage = findViewById(R.id.go_unit);
 //        text = findViewById(R.id.textView);
         claim = findViewById(R.id.input);
         submitButton = findViewById(R.id.submit);
     }
 
     private void connectButtons() {
-//        nextPage.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, UnitPage.class);
-//                startActivity(intent);
-//            }
-//        });
+
+        nextPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, UnitPage.class);
+                intent.putExtra("unit", units.get(0));
+                startActivity(intent);
+            }
+        });
 //        submitButton.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
