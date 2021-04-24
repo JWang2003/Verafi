@@ -71,7 +71,7 @@ public class DataAccess {
                 JSONObject userData = jsonUnits.getJSONObject(i);
                 Unit unit = new Unit(userData.getString("id"), userData.getString("name"), userData.getInt("progress"), userData.getJSONArray("lessons"));
                 units.add(unit);
-        }
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             return null;

@@ -6,7 +6,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:cardBackgroundColor="#F8F8F8"
@@ -44,17 +44,20 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@+id/unit_lesson_name"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginTop="10dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/unit_linear_layout">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="visible"
+                    android:id="@+id/unit_sub_linear_0">
 
                     <ImageView
                         android:layout_width="50dp"
@@ -62,7 +65,7 @@
                         android:src="@drawable/abc_vector_test"
                         app:tint="#C4C4C4"
                         android:scaleType="fitCenter"
-                        android:id="@+id/unit_lesson_icon1"/>
+                        android:id="@+id/unit_sub_linear_0_icon"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -73,7 +76,7 @@
                         android:textStyle="bold"
                         android:textColor="#000000"
                         android:gravity="center_vertical"
-                        android:id="@+id/unit_lesson_subheading1"/>
+                        android:id="@+id/unit_sub_linear_0_name"/>
 
                 </LinearLayout>
 
@@ -81,7 +84,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:id="@+id/unit_sub_linear_1">
 
                     <ImageView
                         android:layout_width="50dp"
@@ -89,7 +94,7 @@
                         android:src="@drawable/abc_vector_test"
                         app:tint="#C4C4C4"
                         android:scaleType="fitCenter"
-                        android:id="@+id/unit_lesson_icon2"/>
+                        android:id="@+id/unit_sub_linear_1_icon"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -100,7 +105,7 @@
                         android:textStyle="bold"
                         android:textColor="#000000"
                         android:gravity="center_vertical"
-                        android:id="@+id/unit_lesson_subheading2"/>
+                        android:id="@+id/unit_sub_linear_1_name"/>
 
                 </LinearLayout>
 
@@ -108,7 +113,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:id="@+id/unit_sub_linear_2">
 
                     <ImageView
                         android:layout_width="50dp"
@@ -116,7 +123,7 @@
                         android:src="@drawable/abc_vector_test"
                         app:tint="#C4C4C4"
                         android:scaleType="fitCenter"
-                        android:id="@+id/unit_lesson_icon3"/>
+                        android:id="@+id/unit_sub_linear_2_icon"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -127,7 +134,7 @@
                         android:textStyle="bold"
                         android:textColor="#000000"
                         android:gravity="center_vertical"
-                        android:id="@+id/unit_lesson_subheading3"/>
+                        android:id="@+id/unit_sub_linear_2_name"/>
 
                 </LinearLayout>
 
@@ -135,7 +142,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:id="@+id/unit_sub_linear_3">
 
                     <ImageView
                         android:layout_width="50dp"
@@ -143,7 +152,7 @@
                         android:src="@drawable/abc_vector_test"
                         app:tint="#C4C4C4"
                         android:scaleType="fitCenter"
-                        android:id="@+id/unit_lesson_icon"/>
+                        android:id="@+id/unit_sub_linear_3_icon"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -154,7 +163,123 @@
                         android:textStyle="bold"
                         android:textColor="#000000"
                         android:gravity="center_vertical"
-                        android:id="@+id/unit_lesson_subheading"/>
+                        android:id="@+id/unit_sub_linear_3_name"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:id="@+id/unit_sub_linear_4">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/abc_vector_test"
+                        app:tint="#C4C4C4"
+                        android:scaleType="fitCenter"
+                        android:id="@+id/unit_sub_linear_4_icon"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:text="%SUBHEADING%"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:gravity="center_vertical"
+                        android:id="@+id/unit_sub_linear_4_name"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:id="@+id/unit_sub_linear_5">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/abc_vector_test"
+                        app:tint="#C4C4C4"
+                        android:scaleType="fitCenter"
+                        android:id="@+id/unit_sub_linear_5_icon"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:text="%SUBHEADING%"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:gravity="center_vertical"
+                        android:id="@+id/unit_sub_linear_5_name"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:id="@+id/unit_sub_linear_6">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/abc_vector_test"
+                        app:tint="#C4C4C4"
+                        android:scaleType="fitCenter"
+                        android:id="@+id/unit_sub_linear_6_icon"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:text="%SUBHEADING%"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:gravity="center_vertical"
+                        android:id="@+id/unit_sub_linear_6_name"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:id="@+id/unit_sub_linear_7">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/abc_vector_test"
+                        app:tint="#C4C4C4"
+                        android:scaleType="fitCenter"
+                        android:id="@+id/unit_sub_linear_7_icon"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:text="%SUBHEADING%"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:gravity="center_vertical"
+                        android:id="@+id/unit_sub_linear_7_name"/>
 
                 </LinearLayout>
 
