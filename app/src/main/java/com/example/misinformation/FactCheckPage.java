@@ -18,7 +18,6 @@ public class FactCheckPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fact_check_page);
 
-        getSupportActionBar().hide();
         claim = findViewById(R.id.input);
         submitButton = findViewById(R.id.submit);
         submitButton.setOnClickListener(new View.OnClickListener() {

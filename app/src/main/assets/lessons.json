@@ -140,6 +140,9 @@
       ],
       "correct" : [2]
     }
-  ]
-
+  ],
+  "EvaluatingPhotosAndVideos" : [],
+  "EvaluatingDataAndInfographics" : [],
+  "ClickRestraint" : [],
+  "SocialMedia" : []
 }
