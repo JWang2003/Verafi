@@ -3,6 +3,7 @@
     {
       "id" : "unit1",
       "name": "Evaluating Sources",
+      "numberOfSections": 12,
       "progress": 0,
       "lessons": [
         {
@@ -41,6 +42,7 @@
     {
       "id" : "unit2",
       "name" : "In Progress",
+      "numberOfSections" : 0,
       "progress" : 0,
       "lessons" : [
         {

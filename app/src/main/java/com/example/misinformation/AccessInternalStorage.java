@@ -10,6 +10,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+// TODO: Delete this class if don't need
 public class AccessInternalStorage {
 
 

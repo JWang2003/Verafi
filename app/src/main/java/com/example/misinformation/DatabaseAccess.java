@@ -1,9 +1,12 @@
 package com.example.misinformation;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 import androidx.annotation.Nullable;
 
@@ -40,6 +43,32 @@ public class DatabaseAccess {
         if (db != null) {
             this.db.close();
         }
+    }
+
+    public int getProgress(String id) {
+        int progress = -1;
+        open();
+        c = db.rawQuery("select * from Progress where ID = '" + id + "'", new String[]{});
+        if (c != null && c.getCount() > 0) {
+            while (c.moveToNext()) {
+                progress = c.getInt(c.getColumnIndex("CurrentProgress"));
+            }
+        }
+         else {
+            System.out.println("Failed to add, cursor is null or count is 0");
+        }
+         close();
+        return progress;
+    }
+
+    public void updateProgress(String id, int prog) {
+        open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("CurrentProgress", prog);
+        db.update("Progress", contentValues, "ID = ?", new String[]{String.valueOf(id)});
+//        db.update("Progress", contentValues, "ID = ?", new String[]{id});
+        System.out.println("UPDATED");
+        close();
     }
 
 }

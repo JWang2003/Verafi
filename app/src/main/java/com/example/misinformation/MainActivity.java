@@ -20,6 +20,8 @@ import java.util.ArrayList;
 import com.androidnetworking.AndroidNetworking;
 
 public class MainActivity extends AppCompatActivity {
+
+    DatabaseAccess db;
     FactCheckAPI factCheck;
     Button submitButton;
     EditText claim;
@@ -33,14 +35,19 @@ public class MainActivity extends AppCompatActivity {
         AndroidNetworking.initialize(getApplicationContext());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        db = DatabaseAccess.getInstance(getApplicationContext());
         connectXML();
         connectButtons();
 
         dataAccess = new DataAccess(MainActivity.this);
         units = dataAccess.getUnits();
         System.out.println(units);
-        System.out.println("PRINTED OUT UNITS");
 
+        System.out.println(db.getProgress("Introduction"));
+
+        db.updateProgress("Introduction", 15);
+        System.out.println(db.getProgress("Introduction"));
+        
     }
 
     private void connectXML() {
