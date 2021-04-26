@@ -25,16 +25,17 @@ public class UnitPage extends AppCompatActivity {
     GridLayoutManager mLayoutManager;
     UnitPageRecyclerAdapter mAdapter;
     ArrayList<Lesson> mLessonList;
-    ArrayList<String> sectionNames;
     Unit unit;
     Button nextPage;
     DataAccess dataAccess;
+    DatabaseAccess databaseAccess;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_unit_page);
         dataAccess = new DataAccess(UnitPage.this);
+        databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
         processIntents();
 
         mLessonList = getLessonsArray();
@@ -88,25 +89,41 @@ public class UnitPage extends AppCompatActivity {
 //                System.out.println("Lesson clicked at " + position);
 //            }
 //        });
+        // TODO: Remove this button and have page navigation from clicking on recycler view
+        nextPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLesson(0);
+            }
+        });
     }
 
-    private void openLesson(int position) {
+    private void openLesson(int selectedLesson) {
+        Lesson mLesson = mLessonList.get(selectedLesson);
+        int progress = databaseAccess.getProgress(mLesson.id);
+        progress = 2;
+        System.out.println(progress);
         //TODO: Be able to tell if we must open a quiz or lesson page based on progress, determine what section we need to get
-        String typeOfLesson = "lesson";
-        String lessonName = "Introduction";
-        String sectionName = sectionNames.get(0);
-
-        if (typeOfLesson.equals("lesson")) {
+        if (progress == mLesson.sectionNames.size() - 1) {
+            progress = progress - 1;
+        }
+        if (progress % 2 == 0) {
             Intent intent = new Intent(UnitPage.this, LessonPage.class);
-            intent.putExtra("sectionName", sectionName);
-            intent.putExtra("lessonName", lessonName);
+            System.out.println(progress);
+            System.out.println(mLesson.sectionNames.size());
+            System.out.println(mLesson.id);
+            System.out.println("PROPERTIES");
+            intent.putExtra("progress", progress);
+            intent.putExtra("sizeOfLesson", mLesson.sectionNames.size());
+            intent.putExtra("lessonID", mLesson.id);
             startActivity(intent);
         }
 
-        else if (typeOfLesson.equals("quiz")) {
+        else if (progress % 2 != 0) {
             Intent intent = new Intent(UnitPage.this, QuizPage.class);
-            intent.putExtra("sectionName", sectionName);
-            intent.putExtra("lessonName", lessonName);
+            intent.putExtra("progress", progress);
+            intent.putExtra("sizeOfLesson", mLesson.sectionNames.size());
+            intent.putExtra("lessonID", mLesson.id);
             startActivity(intent);
         }
 
