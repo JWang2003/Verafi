@@ -21,6 +21,7 @@ public class UnitPageRecyclerAdapter extends RecyclerView.Adapter<UnitPageRecycl
     private ArrayList<Lesson> mLessonList;
     private OnItemClickListener mListener;
     Context context;
+    DatabaseAccess databaseAccess;
 
     public interface OnItemClickListener {
         void onItemClick(int position);
@@ -94,16 +95,31 @@ public class UnitPageRecyclerAdapter extends RecyclerView.Adapter<UnitPageRecycl
 
     @Override
     public void onBindViewHolder(@NonNull UnitPageViewHolder holder, int position) {
+        databaseAccess = DatabaseAccess.getInstance(context.getApplicationContext());
         Lesson currentLesson = mLessonList.get(position);
         holder.setIsRecyclable(false);
         holder.mLessonName.setText(currentLesson.name);
-        holder.mProgressBar.setProgress(currentLesson.lessonProgress);
+
+        int progress = databaseAccess.getProgress(currentLesson.id);
+        progress = 4;
+        int percentage = 0;
+        if (currentLesson.sectionNames.size() > 0) {
+            percentage = progress * 100 / currentLesson.sectionNames.size();
+        }
+        holder.mProgressBar.setProgress(percentage);
 
         //TODO: DYNAMICALLY SHOWING SECTIONS
         for (int i = 0; i < currentLesson.sectionNames.size(); i++) {
             holder.mLinearLayoutArray.get(i).setVisibility(View.VISIBLE);
             holder.mTextViewArray.get(i).setText(currentLesson.sectionNames.get(i));
-            //holder.mTextViewArray.get(i). something something set drawable
+            if (i % 2 == 0) {
+                holder.mImageViewArray.get(i).setImageResource(R.drawable.lesson_pic);
+            } else {
+                holder.mImageViewArray.get(i).setImageResource(R.drawable.quiz_pic);
+            }
+            if (i < progress) {
+                holder.mImageViewArray.get(i).setColorFilter(0xff4ABD80);
+            }
         }
     }
 

@@ -44,9 +44,6 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(units);
 
         System.out.println(db.getProgress("Introduction"));
-
-        db.updateProgress("Introduction", 15);
-        System.out.println(db.getProgress("Introduction"));
         
     }
 

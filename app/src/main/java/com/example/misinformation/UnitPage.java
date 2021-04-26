@@ -82,13 +82,13 @@ public class UnitPage extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mAdapter = new UnitPageRecyclerAdapter(this, mLessonList);
         mRecyclerView.setAdapter(mAdapter);
-//        mAdapter.setOnItemClickListener(new UnitPageRecyclerAdapter.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(int position) {
-//                openLesson(position);
-//                System.out.println("Lesson clicked at " + position);
-//            }
-//        });
+        mAdapter.setOnItemClickListener(new UnitPageRecyclerAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                openLesson(position);
+                System.out.println("Lesson clicked at " + position);
+            }
+        });
         // TODO: Remove this button and have page navigation from clicking on recycler view
         nextPage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,8 +101,6 @@ public class UnitPage extends AppCompatActivity {
     private void openLesson(int selectedLesson) {
         Lesson mLesson = mLessonList.get(selectedLesson);
         int progress = databaseAccess.getProgress(mLesson.id);
-        progress = 2;
-        System.out.println(progress);
         //TODO: Be able to tell if we must open a quiz or lesson page based on progress, determine what section we need to get
         if (progress == mLesson.sectionNames.size() - 1) {
             progress = progress - 1;
@@ -117,9 +115,7 @@ public class UnitPage extends AppCompatActivity {
             intent.putExtra("sizeOfLesson", mLesson.sectionNames.size());
             intent.putExtra("lessonID", mLesson.id);
             startActivity(intent);
-        }
-
-        else if (progress % 2 != 0) {
+        } else if (progress % 2 != 0) {
             Intent intent = new Intent(UnitPage.this, QuizPage.class);
             intent.putExtra("progress", progress);
             intent.putExtra("sizeOfLesson", mLesson.sectionNames.size());
