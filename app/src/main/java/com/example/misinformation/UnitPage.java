@@ -36,6 +36,7 @@ public class UnitPage extends AppCompatActivity {
         setContentView(R.layout.activity_unit_page);
         dataAccess = new DataAccess(UnitPage.this);
         databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
+        databaseAccess.updateProgress("Introduction", 4);
         processIntents();
 
         mLessonList = getLessonsArray();
@@ -101,7 +102,6 @@ public class UnitPage extends AppCompatActivity {
     private void openLesson(int selectedLesson) {
         Lesson mLesson = mLessonList.get(selectedLesson);
         int progress = databaseAccess.getProgress(mLesson.id);
-        progress = 2;
         System.out.println(progress);
         //TODO: Be able to tell if we must open a quiz or lesson page based on progress, determine what section we need to get
         if (progress == mLesson.sectionNames.size() - 1) {
