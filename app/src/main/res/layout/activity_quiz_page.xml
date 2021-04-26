@@ -33,7 +33,7 @@
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
         android:fontFamily="@font/avenir_regular"
-        android:text="Article"
+        android:text="Quiz"
         android:textColor="@color/grey_text"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"

@@ -114,13 +114,13 @@ public class LessonPage extends AppCompatActivity {
     public void go_to_quiz() {
         System.out.println("Progress is:" + currentSectionProgress);
         // Handle the case where user is redoing old lessons, don't change the progress
-        if (lessonSize >= currentSectionProgress) {
-            Intent intent = new Intent(LessonPage.this, QuizPage.class);
-            intent.putExtra("progress", currentSectionProgress + 1);
-            intent.putExtra("sizeOfLesson", lessonSize);
-            intent.putExtra("lessonID", currentLessonID);
-            startActivity(intent);
-        }
+//        if (lessonSize >= currentSectionProgress) {
+//            Intent intent = new Intent(LessonPage.this, QuizPage.class);
+//            intent.putExtra("progress", currentSectionProgress + 1);
+//            intent.putExtra("sizeOfLesson", lessonSize);
+//            intent.putExtra("lessonID", currentLessonID);
+//            startActivity(intent);
+//        }
 
         if (currentSectionProgress + 1 != lessonSize) {
             // Set the progress equal to the index of this lesson
@@ -131,9 +131,10 @@ public class LessonPage extends AppCompatActivity {
             intent.putExtra("lessonID", currentLessonID);
             startActivity(intent);
 
-        } else if (currentSectionProgress + 1 == lessonSize){
+        } else if (currentSectionProgress + 1 == lessonSize){ // THIS WILL never happen, only quiz can be last
             db.updateProgress(currentLessonID, currentSectionProgress + 1);
             Intent intent = new Intent(LessonPage.this, UnitPage.class);
+            startActivity(intent);
         }
 
     }
