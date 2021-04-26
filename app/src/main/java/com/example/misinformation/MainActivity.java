@@ -42,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
         dataAccess = new DataAccess(MainActivity.this);
         units = dataAccess.getUnits();
         System.out.println(units);
-
-
     }
 
     private void connectXML() {

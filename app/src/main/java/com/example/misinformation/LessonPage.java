@@ -124,7 +124,7 @@ public class LessonPage extends AppCompatActivity {
 
         if (currentSectionProgress + 1 != lessonSize) {
             // Set the progress equal to the index of this lesson
-            db.updateProgress(currentLessonID, lessonSize + 1);
+            db.updateProgress(currentLessonID, currentSectionProgress + 1);
             Intent intent = new Intent(LessonPage.this, QuizPage.class);
             intent.putExtra("progress", currentSectionProgress + 1);
             intent.putExtra("sizeOfLesson", lessonSize);

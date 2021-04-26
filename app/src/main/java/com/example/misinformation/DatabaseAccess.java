@@ -66,7 +66,6 @@ public class DatabaseAccess {
         ContentValues contentValues = new ContentValues();
         contentValues.put("CurrentProgress", prog);
         db.update("Progress", contentValues, "ID = ?", new String[]{String.valueOf(id)});
-//        db.update("Progress", contentValues, "ID = ?", new String[]{id});
         System.out.println("UPDATED");
         close();
     }
