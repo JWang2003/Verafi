@@ -63,6 +63,7 @@ public class FactCheckAPI {
                             JSONArray claims = response.getJSONArray("claims");
                             System.out.println("running for loop");
                             for (int i = 0; i < claims.length() - 1; i++) {
+                                System.out.println("for loop running " + i);
                                 JSONObject currentClaim = claims.getJSONObject(i);
                                 String title;
                                 String claimant;

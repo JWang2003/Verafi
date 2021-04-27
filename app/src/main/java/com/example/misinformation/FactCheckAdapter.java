@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,12 +29,22 @@ public class FactCheckAdapter extends RecyclerView.Adapter<FactCheckViewHolder> 
     @Override
     public FactCheckViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View itemView = inflater.inflate(com.example.food_order.R.layout.item_category, parent, false);
-        return
+        View itemView = inflater.inflate(com.example.misinformation.R.layout.item_fact_check, parent, false);
+        FactCheckViewHolder viewHolder = new FactCheckViewHolder(itemView, onClickListener);
+        return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull FactCheckViewHolder holder, int position) {
+        Claim claim = claimsList.get(position);
+
+        holder.claimTitleV.setText(claim.getTitle());
+        holder.claimClaimantV.setText(claim.getClaimant());
+        holder.claimSourceV.setText(claim.getSource());
+        holder.claimReviewDateV.setText(claim.getReviewDate());
+        holder.claimRatingV.setText(claim.getClaimRating());
+        holder.publisherNameV.setText(claim.getPublisherName());
+        holder.publisherSiteV.setText(claim.getPublisherSite());
 
     }
 

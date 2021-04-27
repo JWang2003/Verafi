@@ -10,22 +10,29 @@ public class FactCheckViewHolder extends RecyclerView.ViewHolder implements View
 
     //Properties
     View itemView;
-    TextView claimTitle;
-    TextView claimAuthor;
-    TextView claimSource;
-    TextView claimReviewDate;
-    TextView claimRating;
-    TextView publisherName;
-    TextView publishersite;
+    TextView claimTitleV;
+    TextView claimClaimantV;
+    TextView claimSourceV;
+    TextView claimReviewDateV;
+    TextView claimRatingV;
+    TextView publisherNameV;
+    TextView publisherSiteV;
     OnClickListener onClickListener;
 
 
     public FactCheckViewHolder(@NonNull View itemView, OnClickListener onClickListener) {
+        //Usual setup
         super(itemView);
         this.itemView = itemView;
-//        nameView = itemView.findViewById(R.id.category_name);
-//        imageView = itemView.findViewById(R.id.piclol);
 
+        //Connecting item XML elements to variables
+        claimTitleV = itemView.findViewById(R.id.fact_check_title);
+        claimClaimantV = itemView.findViewById(R.id.fact_check_claimant);
+        claimSourceV = itemView.findViewById(R.id.fact_check_source);
+        claimReviewDateV = itemView.findViewById(R.id.fact_check_reviewDate);
+        claimRatingV = itemView.findViewById(R.id.fact_check_rating);
+        publisherNameV = itemView.findViewById(R.id.fact_check_publisherName);
+        publisherSiteV = itemView.findViewById(R.id.fact_check_publisherSite);
 
         // Make item clickable
         this.onClickListener = onClickListener;
@@ -34,11 +41,12 @@ public class FactCheckViewHolder extends RecyclerView.ViewHolder implements View
 
     @Override
     public void onClick(View v) {
-        onClickListener.onClick(getAdapterPosition());
+        onClickListener.rvOnClick(getAdapterPosition());
     }
 
 
     public interface OnClickListener {
-        void onClick(int position);
+        void rvOnClick(int position);
     }
+
 }
