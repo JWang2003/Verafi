@@ -118,6 +118,8 @@ public class UnitPageRecyclerAdapter extends RecyclerView.Adapter<UnitPageRecycl
             }
             if (i < progress) {
                 holder.mImageViewArray.get(i).setColorFilter(0xff4ABD80);
+            } else if (i == progress) {
+                holder.mImageViewArray.get(i).setColorFilter(0xff0978BE);
             }
         }
     }

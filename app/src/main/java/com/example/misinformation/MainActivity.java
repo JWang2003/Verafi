@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         db = DatabaseAccess.getInstance(getApplicationContext());
+        db.updateProgress("Introduction", 3); //TODO: debug
         connectXML();
         connectButtons();
 

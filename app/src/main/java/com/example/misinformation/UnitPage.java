@@ -100,7 +100,7 @@ public class UnitPage extends AppCompatActivity {
         Lesson mLesson = mLessonList.get(selectedLesson);
         int progress = databaseAccess.getProgress(mLesson.id);
         //TODO: Be able to tell if we must open a quiz or lesson page based on progress, determine what section we need to get
-        if (progress == mLesson.sectionNames.size() - 1) {
+        if (progress == mLesson.sectionNames.size()) {
             progress = progress - 1;
         }
         if (progress % 2 == 0) {
