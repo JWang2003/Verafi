@@ -64,6 +64,7 @@
         android:text="%LessonContent%"
         android:textColor="@color/black"
         android:textSize="20sp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lesson_name" />
@@ -80,7 +81,7 @@
         android:text="%Website%"
         android:textColor="@color/link_blue"
         android:textSize="20sp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text" />
@@ -90,26 +91,103 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:backgroundTint="#F8F8F8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/website">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constrainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/questions">
 
         <TextView
             android:id="@+id/description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/avenir_regular"
-            android:text="%Website%"
-            android:textColor="@color/link_blue"
-            android:textSize="20sp"
-            app:layout_constraintTop_toBottomOf="@+id/questions"/>
+            android:fontFamily="@font/avenir_bold"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="35dp"
+            android:text="%Description%"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/constrainer"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/option1"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/description">
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:text="%Choice%"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/avenir_regular"
+            android:backgroundTint="@color/grey"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description" />
+
+        <Button
+            android:id="@+id/option2"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/grey"
+            android:textAllCaps="false"
+            android:text="%Choice%"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/avenir_regular"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/option1" />
+
+        <Button
+            android:id="@+id/option3"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/grey"
+            android:layout_marginTop="2dp"
+            android:textAllCaps="false"
+            android:text="%Choice%"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/avenir_regular"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/option2" />
+
+        <Button
+            android:id="@+id/option4"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/grey"
+            android:layout_marginTop="2dp"
+            android:textAllCaps="false"
+            android:text="%Choice%"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/avenir_regular"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/option3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
@@ -119,20 +197,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardCornerRadius="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questions">
 
         <Button
             android:id="@+id/continue_button"
+            android:enabled="false"
             android:layout_width="310dp"
             android:layout_height="60dp"
             android:fontFamily="@font/avenir_bold"
             android:text="Continue"
             android:textColor="@color/white"
             android:gravity="center"
-            app:backgroundTint="@color/green" />
+            app:backgroundTint="@color/grey" />
 
     </androidx.cardview.widget.CardView>
 

@@ -16,11 +16,12 @@
       "content" : {
         "type" : "website",
         "text" : "After each section will be a multiple choice quiz or exercise. Points will be given based upon how many attempts are needed to get the correct answer. A certificate will be given at the end if you have gained enough points.\n\nFor this exercise, take a look at the following website and ask yourself: would you trust the information provided on this website? Note that you are allowed to use any other resources on the internet including google search to aid in your evaluation. Use as little or as much time needed to be confident in your answer.\n",
-        "website" : "https://minimumwage.com/"
+        "website" : "https://minimumwage.com/",
+        "description" : "Do you trust the information on this site?"
       },
       "choices" : [
-          "Yes: I would trust the information provided on this website",
-          "No: I would not trust the information provided on this website"
+          "Yes",
+          "No"
       ],
       "correct" : [1,2]
     },
@@ -37,7 +38,8 @@
       "type" : "quiz",
       "name" : "Exercise Breakdown",
       "content" : {
-        "text" : "What are the three main questions to ask when evaluating information?\ni. Who is behind the information?\nii. Does the information sound credible?\niii. What is the evidence for their claims?\niv. What do other sources say about the organization and its claims\n"
+        "description" : "i. Who is behind the information?\nii. Does the information sound credible?\niii. What is the evidence for their claims?\niv. What do other sources say about the organization and its claims\n",
+        "text" : "What are the three main questions to ask when evaluating information?\n"
       },
       "choices" : [
         "i, ii, iii",

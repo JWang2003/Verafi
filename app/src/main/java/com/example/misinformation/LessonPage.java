@@ -109,6 +109,15 @@ public class LessonPage extends AppCompatActivity {
             sources.setText(text_sources);
             sources.setVisibility(View.VISIBLE);
         }
+
+        website.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LessonPage.this, WebPage.class);
+                intent.putExtra("url", website_link);
+                startActivity(intent);
+            }
+        });
     }
 
     public void go_to_quiz() {
