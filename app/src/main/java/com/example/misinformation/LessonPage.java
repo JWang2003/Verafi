@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,12 +29,15 @@ public class LessonPage extends AppCompatActivity {
     Button continue_button;
 
     String currentLessonID;
-    int currentSectionProgress;
+    int currentSectionIndex;
     int lessonSize;
     DataAccess dataAccess;
     DatabaseAccess db;
     ArrayList<Section> allSections;
+    ArrayList<ImageButton> mImageButtonArray = new ArrayList<>();
     Section currentSection;
+
+    int totalProgress;
 
     String lesson_content = null;
     String website_link = null;
@@ -43,8 +49,9 @@ public class LessonPage extends AppCompatActivity {
         setContentView(R.layout.activity_lesson_page);
 
         dataAccess = new DataAccess(LessonPage.this);
-        db = db.getInstance(getApplicationContext());
+        db = DatabaseAccess.getInstance(getApplicationContext());
         processIntents();
+        handle_top_bar();
         try {
             connectXML();
         } catch (JSONException e) {
@@ -59,11 +66,11 @@ public class LessonPage extends AppCompatActivity {
         Intent intent = getIntent();
 
         currentLessonID = intent.getStringExtra("lessonID");
-        currentSectionProgress = intent.getIntExtra("progress", 0);
+        currentSectionIndex = intent.getIntExtra("progress", 0);
         lessonSize = intent.getIntExtra("sizeOfLesson", 0);
         allSections = dataAccess.getLessonSections(currentLessonID);
-        currentSection = allSections.get(currentSectionProgress);
-        System.out.println(currentSection);
+        currentSection = allSections.get(currentSectionIndex);
+        totalProgress = db.getProgress(currentLessonID);
     }
 
     private void connectXML() throws JSONException {
@@ -121,7 +128,27 @@ public class LessonPage extends AppCompatActivity {
     }
 
     public void go_to_quiz() {
-        System.out.println("Progress is:" + currentSectionProgress);
+        Intent intent;
+        // Update progress if index matches progress, check for bugs here
+        // If index == 5, total Progress = 6, index should never reach 6
+        if (currentSectionIndex == totalProgress) {
+            db.updateProgress(currentLessonID, totalProgress + 1);
+        }
+        // If size = 6, and index + 1 == 6, that means we are currently on the last section
+        if (currentSectionIndex + 1 >= lessonSize) {
+            // TODO: NAVGIATE TO UNITPAGE NOT MAIN
+            System.out.println("NAVIGATE TO UNIT PAGE");
+            intent = new Intent(LessonPage.this, MainActivity.class);
+            startActivity(intent);
+        }
+        else {
+            intent = new Intent(LessonPage.this, QuizPage.class);
+            intent.putExtra("progress", currentSectionIndex + 1);
+            intent.putExtra("sizeOfLesson", lessonSize);
+            intent.putExtra("lessonID", currentLessonID);
+            startActivity(intent);
+        }
+//        System.out.println("Progress is:" + currentSectionIndex);
         // Handle the case where user is redoing old lessons, don't change the progress
 //        if (lessonSize >= currentSectionProgress) {
 //            Intent intent = new Intent(LessonPage.this, QuizPage.class);
@@ -131,20 +158,70 @@ public class LessonPage extends AppCompatActivity {
 //            startActivity(intent);
 //        }
 
-        if (currentSectionProgress + 1 != lessonSize) {
-            // Set the progress equal to the index of this lesson
-            db.updateProgress(currentLessonID, currentSectionProgress + 1);
-            Intent intent = new Intent(LessonPage.this, QuizPage.class);
-            intent.putExtra("progress", currentSectionProgress + 1);
-            intent.putExtra("sizeOfLesson", lessonSize);
-            intent.putExtra("lessonID", currentLessonID);
-            startActivity(intent);
+//        if (currentSectionIndex + 1 != lessonSize) {
+//            // Set the progress equal to the index of this lesson
+//            db.updateProgress(currentLessonID, currentSectionIndex + 1);
+//            Intent intent = new Intent(LessonPage.this, QuizPage.class);
+//            intent.putExtra("progress", currentSectionIndex + 1);
+//            intent.putExtra("sizeOfLesson", lessonSize);
+//            intent.putExtra("lessonID", currentLessonID);
+//            startActivity(intent);
+//            finish();
+//
+//        } else if (currentSectionIndex + 1 == lessonSize){
+//            db.updateProgress(currentLessonID, currentSectionIndex + 1);
+//            Intent intent = new Intent(LessonPage.this, UnitPage.class);
+//            startActivity(intent);
+//            finish();
+//        }
 
-        } else if (currentSectionProgress + 1 == lessonSize){ // THIS WILL never happen, only quiz can be last
-            db.updateProgress(currentLessonID, currentSectionProgress + 1);
-            Intent intent = new Intent(LessonPage.this, UnitPage.class);
-            startActivity(intent);
+    }
+
+    public void handle_top_bar() {
+
+        mImageButtonArray.add(findViewById(R.id.lesson_top_icon_0));
+        mImageButtonArray.add(findViewById(R.id.lesson_top_icon_1));
+        mImageButtonArray.add(findViewById(R.id.lesson_top_icon_2));
+        mImageButtonArray.add(findViewById(R.id.lesson_top_icon_3));
+        mImageButtonArray.add(findViewById(R.id.lesson_top_icon_4));
+        mImageButtonArray.add(findViewById(R.id.lesson_top_icon_5));
+        mImageButtonArray.add(findViewById(R.id.lesson_top_icon_6));
+        mImageButtonArray.add(findViewById(R.id.lesson_top_icon_7));
+
+        for (int i = 0; i < allSections.size(); i++) {
+            mImageButtonArray.get(i).setVisibility(View.VISIBLE);
+            if (i % 2 == 0) {
+                mImageButtonArray.get(i).setImageResource(R.drawable.lesson_pic);
+            } else {
+                mImageButtonArray.get(i).setImageResource(R.drawable.quiz_pic);
+            }
+            if (i < totalProgress) {
+                mImageButtonArray.get(i).setColorFilter(0xff4ABD80);
+            }
+            if (i == currentSectionIndex) {
+                mImageButtonArray.get(i).setColorFilter(0xff0978BE);
+            }
         }
 
+        for (int i = 0; i < mImageButtonArray.size(); i++) {
+            mImageButtonArray.get(i).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int buttonIndex = mImageButtonArray.indexOf(v);
+                    Intent intent;
+                    if (buttonIndex <= totalProgress) {
+                        if (buttonIndex % 2 == 0) {
+                            intent = new Intent(LessonPage.this, LessonPage.class);
+                        } else {
+                            intent = new Intent(LessonPage.this, QuizPage.class);
+                        }
+                        intent.putExtra("progress", buttonIndex);
+                        intent.putExtra("sizeOfLesson", lessonSize);
+                        intent.putExtra("lessonID", currentLessonID);
+                        startActivity(intent);
+                    }
+                }
+            });
+        }
     }
 }
