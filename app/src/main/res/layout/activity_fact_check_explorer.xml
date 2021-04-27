@@ -6,4 +6,69 @@
     android:layout_height="match_parent"
     tools:context=".FactCheckExplorer">
 
+    <LinearLayout
+        android:id="@+id/fce_topSection"
+        android:layout_marginTop="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-16dp">
+
+        <EditText
+            android:id="@+id/claimInput"
+            android:layout_width="300sp"
+            android:layout_height="50sp"
+            android:layout_marginLeft="40px"
+            android:layout_marginTop="10sp"
+
+            android:hint="claim to be checked"
+            android:inputType="text"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/fce_searchButton"
+            android:layout_width="92dp"
+            android:layout_height="60sp"
+            android:width="400sp"
+            android:text="search" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/fceResults_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="69 results found for 'food'"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/fce_topSection">
+    </TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/claims_recycle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fceResults_text"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!--    android:scrollbars="horizontal"-->
+
+
+
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+
+<!--        app:layout_constraintVertical_bias="0.44" -->
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

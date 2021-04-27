@@ -17,10 +17,10 @@ public class FactCheckViewHolder extends RecyclerView.ViewHolder implements View
     TextView claimRating;
     TextView publisherName;
     TextView publishersite;
-    OnNoteListener onNoteListener;
+    OnClickListener onClickListener;
 
 
-    public FactCheckViewHolder(@NonNull View itemView, OnNoteListener onNoteListener) {
+    public FactCheckViewHolder(@NonNull View itemView, OnClickListener onClickListener) {
         super(itemView);
         this.itemView = itemView;
 //        nameView = itemView.findViewById(R.id.category_name);
@@ -28,18 +28,17 @@ public class FactCheckViewHolder extends RecyclerView.ViewHolder implements View
 
 
         // Make item clickable
-        this.onNoteListener = onNoteListener;
+        this.onClickListener = onClickListener;
         itemView.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        onNoteListener.onNoteClick(getAdapterPosition());
+        onClickListener.onClick(getAdapterPosition());
     }
 
 
-    public interface OnNoteListener {
-        void onNoteClick(int position);
+    public interface OnClickListener {
+        void onClick(int position);
     }
-
 }

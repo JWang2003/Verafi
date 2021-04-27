@@ -23,6 +23,7 @@ public class FactCheckAPI {
         this.searchQuery = searchQuery;
         claimsList = new ArrayList<>();
         nextPage = true;
+        search();
     }
 
     public void search() {
