@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -29,6 +30,7 @@ public class UnitPage extends AppCompatActivity {
     Button nextPage;
     DataAccess dataAccess;
     DatabaseAccess databaseAccess;
+    TextView unitName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +48,6 @@ public class UnitPage extends AppCompatActivity {
         ArrayList<Lesson> theLessons = new ArrayList<Lesson>();
         try {
             lessons = new JSONArray(jsonArray);
-            System.out.println(lessons.toString());
-            System.out.println(lessons.get(2));
             for (int i = 0; i < lessons.length(); i++) {
                 String id = lessons.getJSONObject(i).getString("id");
                 String name = lessons.getJSONObject(i).getString("lesson");
@@ -73,7 +73,8 @@ public class UnitPage extends AppCompatActivity {
 
     private void connectXML() {
         nextPage = findViewById(R.id.go_lesson);
-
+        unitName = findViewById(R.id.unit_name);
+        unitName.setText(unit.name);
         //TODO: RECYCLER VIEW PORTION
         mRecyclerView = findViewById(R.id.unit_recycler_view);
         mLayoutManager = new GridLayoutManager(this, 1, GridLayoutManager.VERTICAL, false);
