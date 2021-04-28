@@ -8,9 +8,6 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import org.json.JSONException;
@@ -22,11 +19,12 @@ import com.androidnetworking.AndroidNetworking;
 public class MainActivity extends AppCompatActivity {
 
     DatabaseAccess db;
-    FactCheckAPI factCheck;
+    FactCheckAPI factCheckAPI;
     Button submitButton;
     EditText claim;
     DataAccess dataAccess;
     ArrayList<Unit> units;
+    Button factCheckPage;
     Button nextPage;
     TextView text;
 
@@ -41,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 //        db.updateProgress("LateralReading", 0);
 
         connectXML();
-        connectButtons();
+        onClickSetup();
 
         dataAccess = new DataAccess(MainActivity.this);
         units = dataAccess.getUnits();
@@ -49,14 +47,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void connectXML() {
-
+        factCheckPage = findViewById(R.id.go_factCheck);
         nextPage = findViewById(R.id.go_unit);
 //        text = findViewById(R.id.textView);
-        claim = findViewById(R.id.input);
-        submitButton = findViewById(R.id.submit);
     }
 
-    private void connectButtons() {
+    private void onClickSetup() {
 
         nextPage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +61,14 @@ public class MainActivity extends AppCompatActivity {
                 Unit selectedUnit = units.get(0);
                 intent.putExtra("unit", selectedUnit);
                 intent.putExtra("jsonArray", selectedUnit.lessons.toString());
+                startActivity(intent);
+            }
+        });
+
+        factCheckPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, FactCheckPage.class);
                 startActivity(intent);
             }
         });
@@ -78,8 +82,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void search() {
-        factCheck = new FactCheckAPI(claim.getText().toString());
-        factCheck.search();
+        factCheckAPI = new FactCheckAPI(claim.getText().toString());
+        factCheckAPI.search();
 //        System.out.println(factCheck.claimsList.get(0).getTitle());
     }
 

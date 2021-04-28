@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Misinformation">
         <activity android:name=".WebPage"></activity>
+        <activity android:name=".FactCheckExplorer"></activity>
         <activity android:name=".QuizPage" />
         <activity android:name=".FactCheckPage" />
         <activity android:name=".LessonPage" />

@@ -62,7 +62,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <RadioButton
-                android:id="@+id/search"
+                android:id="@+id/go_factCheck"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="1dp"
@@ -99,6 +99,7 @@
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="109dp"
         tools:layout_editor_absoluteY="-99dp">
+
 
         <Button
             android:id="@+id/go_unit"
