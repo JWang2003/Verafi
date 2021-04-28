@@ -11,6 +11,7 @@ public class FactCheckViewHolder extends RecyclerView.ViewHolder implements View
     //Properties
     View itemView;
     TextView claimTitleV;
+    TextView claimDateV;
     TextView claimClaimantV;
     TextView claimSourceV;
     TextView claimReviewDateV;
@@ -27,6 +28,7 @@ public class FactCheckViewHolder extends RecyclerView.ViewHolder implements View
 
         //Connecting item XML elements to variables
         claimTitleV = itemView.findViewById(R.id.fact_check_title);
+        claimDateV = itemView.findViewById(R.id.fact_check_date);
         claimClaimantV = itemView.findViewById(R.id.fact_check_claimant);
         claimSourceV = itemView.findViewById(R.id.fact_check_source);
         claimReviewDateV = itemView.findViewById(R.id.fact_check_reviewDate);

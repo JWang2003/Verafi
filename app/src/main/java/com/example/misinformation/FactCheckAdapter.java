@@ -39,6 +39,7 @@ public class FactCheckAdapter extends RecyclerView.Adapter<FactCheckViewHolder> 
         Claim claim = claimsList.get(position);
 
         holder.claimTitleV.setText(claim.getTitle());
+        holder.claimDateV.setText(claim.getClaimDate());
         holder.claimClaimantV.setText(claim.getClaimant());
         holder.claimSourceV.setText(claim.getSource());
         holder.claimReviewDateV.setText(claim.getReviewDate());
@@ -52,4 +53,12 @@ public class FactCheckAdapter extends RecyclerView.Adapter<FactCheckViewHolder> 
     public int getItemCount() {
         return claimsList.size();
     }
+
+//    public String checkRatingSize(String rating) {
+//        if (rating.length() <= 30) {
+//            return rating;
+//        } else {
+//
+//        }
+//    }
 }

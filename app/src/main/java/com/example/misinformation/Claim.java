@@ -9,8 +9,9 @@ public class Claim {
     private String claimRating;
     private String publisherName;
     private String publisherSite;
+    private String url;
 
-    public Claim(String title, String claimant, String claimDate, String source, String reviewDate, String claimRating, String publisherName,  String publisherSite) {
+    public Claim(String title, String claimant, String claimDate, String source, String reviewDate, String claimRating, String publisherName,  String publisherSite, String url) {
         this.title = title;
         this.claimant = claimant;
         this.claimDate = claimDate;
@@ -19,6 +20,7 @@ public class Claim {
         this.claimRating = claimRating;
         this.publisherName = publisherName;
         this.publisherSite = publisherSite;
+        this.url = url;
     }
 
     public String getTitle() {
@@ -52,4 +54,6 @@ public class Claim {
     public String getPublisherSite() {
         return publisherSite;
     }
+
+    public String getUrl() { return url; }
 }

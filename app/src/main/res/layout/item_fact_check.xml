@@ -10,72 +10,86 @@
     android:paddingBottom="5dp">
 
     <androidx.cardview.widget.CardView
-
         android:layout_width="380sp"
-        android:layout_height="200sp"
-        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+       android:paddingLeft="40sp"
         app:cardCornerRadius="15dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:paddingTop="20sp"
+            android:paddingBottom="20sp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingStart="20sp"
+            android:paddingLeft="20sp">
 
             <TextView
                 android:id="@+id/fact_check_title"
-                android:fontFamily="sans-serif-medium"
                 android:layout_width="wrap_content"
-                android:layout_height="19sp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
                 android:text="Claim Title"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/fact_check_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp"
+                android:text="Claim Date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fact_check_title" />
 
             <TextView
                 android:id="@+id/fact_check_claimant"
                 android:layout_width="wrap_content"
-                android:layout_height="24sp"
-                app:layout_constraintTop_toBottomOf="@id/fact_check_title"
+                android:layout_height="wrap_content"
+                android:text="Claim Author"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="Claim Author" />
+                app:layout_constraintTop_toBottomOf="@id/fact_check_date" />
 
             <TextView
                 android:id="@+id/fact_check_source"
                 android:layout_width="wrap_content"
-                android:layout_height="30sp"
-                app:layout_constraintTop_toBottomOf="@id/fact_check_claimant"
+                android:layout_height="wrap_content"
+                android:text="Claim Source"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="Claim Source" />
+                app:layout_constraintTop_toBottomOf="@id/fact_check_claimant" />
 
             <TextView
                 android:id="@+id/fact_check_reviewDate"
                 android:layout_width="wrap_content"
-                android:layout_height="30sp"
-                app:layout_constraintTop_toBottomOf="@id/fact_check_source"
+                android:layout_height="wrap_content"
+                android:text="Claim ReviewDate"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="Claim Source" />
+                app:layout_constraintTop_toBottomOf="@id/fact_check_source" />
 
 
             <TextView
                 android:id="@+id/fact_check_rating"
                 android:layout_width="wrap_content"
-                android:layout_height="30sp"
-                app:layout_constraintTop_toBottomOf="@id/fact_check_reviewDate"
+                android:layout_height="wrap_content"
+                android:text="Claim Rating"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="Claim Rating" />
+                app:layout_constraintTop_toBottomOf="@id/fact_check_reviewDate" />
+
             <TextView
                 android:id="@+id/fact_check_publisherName"
                 android:layout_width="wrap_content"
-                android:layout_height="25sp"
-                app:layout_constraintTop_toBottomOf="@id/fact_check_rating"
+                android:layout_height="wrap_content"
+                android:text="Claim Publisher name"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="Claim Publisher name" />
+                app:layout_constraintTop_toBottomOf="@id/fact_check_rating" />
+
             <TextView
                 android:id="@+id/fact_check_publisherSite"
                 android:layout_width="wrap_content"
-                android:layout_height="25sp"
-                app:layout_constraintTop_toBottomOf="@id/fact_check_publisherName"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30sp"
                 android:text="Claim Publisher site"
-                />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fact_check_publisherName" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -63,7 +63,7 @@ public class FactCheckAPI {
                             JSONArray claims = response.getJSONArray("claims");
                             System.out.println("running for loop");
                             for (int i = 0; i < claims.length() - 1; i++) {
-                                System.out.println("for loop running " + i);
+//                                System.out.println("for loop running " + i);
                                 JSONObject currentClaim = claims.getJSONObject(i);
                                 String title;
                                 String claimant;
@@ -75,68 +75,75 @@ public class FactCheckAPI {
                                 } catch (Exception e) {
                                     title = "no title";
                                 }
-                                System.out.println("title: " + title);
+//                                System.out.println("title: " + title);
 
                                 try {
                                     claimant = currentClaim.getString("claimant");
                                 } catch (Exception e) {
                                     claimant = "no claimant";
                                 }
-                                System.out.println("claimant: " + claimant);
+//                                System.out.println("claimant: " + claimant);
 
                                 try {
                                     claimDate = currentClaim.getString("claimDate");
                                 } catch (Exception e) {
                                     claimDate = "no claimDate";
                                 }
-                                System.out.println("claimDate: " + claimDate);
+//                                System.out.println("claimDate: " + claimDate);
 
                                 try {
                                     source = currentClaim.getString("url");
                                 } catch(Exception e) {
                                     source = "no source";
                                 }
-                                System.out.println("source: " + source);
+//                                System.out.println("source: " + source);
 
 
                                 JSONObject currentClaimReview = currentClaim.getJSONArray("claimReview").getJSONObject(0);
                                 String reviewDate;
                                 String claimRating;
+                                String url;
 
                                 try {
                                     reviewDate = currentClaimReview.getString("reviewDate");
                                 } catch (Exception e) {
                                     reviewDate = "no reviewDate";
                                 }
-                                System.out.println("reviewDate: " + reviewDate);
-
+//                                System.out.println("reviewDate: " + reviewDate);
                                 try {
                                     claimRating = currentClaimReview.getString("textualRating");
                                 } catch (Exception e) {
                                     claimRating = "no claimRating";
                                 }
-                                System.out.println("claimRating: " + claimRating);
+//                                System.out.println("claimRating: " + claimRating);
+                                try {
+                                    url = currentClaimReview.getString("url");
+                                } catch (Exception e) {
+                                    url = "no url";
+                                }
+//                                System.out.println("publisher url: " + url);
 
 
                                 JSONObject currentClaimPublisher = currentClaimReview.getJSONObject("publisher");
                                 String publisherName;
                                 String publisherSite;
+
                                 try {
                                     publisherName = currentClaimPublisher.getString("name");
                                 } catch (Exception e) {
                                     publisherName = "no publisherName";
                                 }
-                                System.out.println("publisherName: ");
-
-
+//                                System.out.println("publisherName: ");
                                 try {
                                     publisherSite = currentClaimPublisher.getString("site");
                                 } catch (Exception e) {
                                     publisherSite = "no publisherSite";
                                 }
-                                System.out.println("publisherSite: " + publisherSite);
+//                                System.out.println("publisherSite: " + publisherSite);
 
-                                claimsList.add(new Claim(title, claimant, claimDate, source, reviewDate, claimRating, publisherName, publisherSite));
+
+
+                                claimsList.add(new Claim(title, claimant, claimDate, source, reviewDate, claimRating, publisherName, publisherSite, url));
                         }
                             if (nextPage) {
                                 consecutiveSearch();
