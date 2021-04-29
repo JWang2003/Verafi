@@ -108,24 +108,12 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPager);
         factCheckPage = findViewById(R.id.go_factCheck);
         learnPage = findViewById(R.id.Learn);
-        nextPage = findViewById(R.id.go_unit);
         radioGroup = findViewById(R.id.toggle);
         topText = findViewById(R.id.top_text);
 //        text = findViewById(R.id.textView);
     }
 
     private void onClickSetup() {
-
-        nextPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, UnitPage.class);
-                Unit selectedUnit = units.get(0);
-                intent.putExtra("unit", selectedUnit);
-                intent.putExtra("jsonArray", selectedUnit.lessons.toString());
-                startActivity(intent);
-            }
-        });
 
         factCheckPage.setOnClickListener(new View.OnClickListener() {
             @Override

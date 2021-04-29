@@ -72,27 +72,19 @@ public class UnitPage extends AppCompatActivity {
     }
 
     private void connectXML() {
-        nextPage = findViewById(R.id.go_lesson);
         unitName = findViewById(R.id.unit_name);
         unitName.setText(unit.name);
-        //TODO: RECYCLER VIEW PORTION
-        mRecyclerView = findViewById(R.id.unit_recycler_view);
+
         mLayoutManager = new GridLayoutManager(this, 1, GridLayoutManager.VERTICAL, false);
-        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView = findViewById(R.id.unit_recycler_view);
         mAdapter = new UnitPageRecyclerAdapter(this, mLessonList);
         mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setLayoutManager(mLayoutManager);
         mAdapter.setOnItemClickListener(new UnitPageRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 openLesson(position);
                 System.out.println("Lesson clicked at " + position);
-            }
-        });
-        // TODO: Remove this button and have page navigation from clicking on recycler view
-        nextPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openLesson(0);
             }
         });
     }
@@ -104,6 +96,7 @@ public class UnitPage extends AppCompatActivity {
         if (progress == mLesson.sectionNames.size()) {
             progress = progress - 1;
         }
+
         if (progress % 2 == 0) {
             Intent intent = new Intent(UnitPage.this, LessonPage.class);
             System.out.println(progress);
