@@ -25,6 +25,12 @@ public class FactCheckAdapter extends RecyclerView.Adapter<FactCheckViewHolder> 
         this.onClickListener = onClickListener;
     }
 
+    public FactCheckAdapter(FactCheckFragment factCheckFragment, ArrayList<Claim> claimsList, FactCheckFragment factCheckFragment1) {
+        this.context = context;
+        this.claimsList = claimsList;
+        this.onClickListener = onClickListener;
+    }
+
     @NonNull
     @Override
     public FactCheckViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

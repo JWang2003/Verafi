@@ -131,8 +131,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 viewPager.setCurrentItem(1, true);
-//                Intent intent = new Intent(MainActivity.this, FactCheckPage.class);
-//                startActivity(intent);
+                radioGroup.check(R.id.go_factCheck);
+//               Intent intent = new Intent(MainActivity.this, FactCheckExplorer.class);
+//               startActivity(intent);
             }
         });
 
