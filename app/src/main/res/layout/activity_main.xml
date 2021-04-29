@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/top"
+            android:id="@+id/top_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
@@ -62,21 +62,6 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <RadioButton
-                android:id="@+id/go_factCheck"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="1dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginBottom="1dp"
-                android:layout_weight="1"
-                android:background="@drawable/toggle_btn_background_left"
-                android:button="@null"
-                android:fontFamily="@font/avenir_bold"
-                android:gravity="center"
-                android:text="Factcheck"
-                android:textColor="@color/black" />
-
-            <RadioButton
                 android:id="@+id/Learn"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -84,21 +69,49 @@
                 android:layout_marginRight="1dp"
                 android:layout_marginBottom="1dp"
                 android:layout_weight="1"
-                android:background="@drawable/toggle_btn_background_right"
+                android:background="@drawable/toggle_btn_background_left"
                 android:button="@null"
                 android:fontFamily="@font/avenir_bold"
                 android:gravity="center"
                 android:text="Learn"
                 android:textColor="@color/black" />
+
+            <RadioButton
+                android:id="@+id/go_factCheck"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/toggle_btn_background_right"
+                android:button="@null"
+                android:fontFamily="@font/avenir_bold"
+                android:gravity="center"
+                android:text="Factcheck"
+                android:textColor="@color/black" />
+
+
         </RadioGroup>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="520dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+    </androidx.viewpager.widget.ViewPager>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="-99dp">
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <Button
