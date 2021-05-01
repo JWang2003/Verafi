@@ -1,5 +1,6 @@
 package com.example.misinformation;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -35,7 +37,7 @@ public class FactCheckFragment extends Fragment {
     Button searchButton;
     String passedClaim;
 
-    // TODO: retract keyboard when hitting search button
+    // TODO: Fix bug where you have to click on editText to open
     public FactCheckFragment() {
         // Required empty public constructor
     }
@@ -98,18 +100,13 @@ public class FactCheckFragment extends Fragment {
                 System.out.println("CLICKED");
                 if (claimSearch.getText().toString() != null && claimSearch.getText().toString() != "") {
                     startSearch();
+                    hideKeyboardFrom(getActivity().getApplicationContext(), getView());
                 }
             }
         });
     }
-    private void updateFrag() {
-        if (getFragmentManager() != null) {
-
-            getFragmentManager()
-                    .beginTransaction()
-                    .detach(this)
-                    .attach(this)
-                    .commit();
-        }
+    public static void hideKeyboardFrom(Context context, View view) {
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 }
