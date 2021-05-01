@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
@@ -43,6 +44,9 @@ public class LessonPage extends AppCompatActivity {
     String website_link = null;
     String text_sources = null;
 
+    Unit unit;
+    String jsonArray;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +65,16 @@ public class LessonPage extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        System.out.println("NAVIGATE TO UNIT PAGE");
+        Intent intent = new Intent(LessonPage.this, UnitPage.class);
+        intent.putExtra("unit", unit);
+        intent.putExtra("jsonArray", jsonArray);
+        startActivity(intent);
+    }
+
     private void processIntents() {
         // TODO: Make navigate to last section if progress = la
         Intent intent = getIntent();
@@ -71,6 +85,8 @@ public class LessonPage extends AppCompatActivity {
         allSections = dataAccess.getLessonSections(currentLessonID);
         currentSection = allSections.get(currentSectionIndex);
         totalProgress = db.getProgress(currentLessonID);
+        unit = intent.getParcelableExtra("unit");
+        jsonArray = intent.getStringExtra("jsonArray");
     }
 
     private void connectXML() throws JSONException {
@@ -138,7 +154,9 @@ public class LessonPage extends AppCompatActivity {
         if (currentSectionIndex + 1 >= lessonSize) {
             // TODO: NAVGIATE TO UNITPAGE NOT MAIN
             System.out.println("NAVIGATE TO UNIT PAGE");
-            intent = new Intent(LessonPage.this, MainActivity.class);
+            intent = new Intent(LessonPage.this, UnitPage.class);
+            intent.putExtra("unit", unit);
+            intent.putExtra("jsonArray", jsonArray);
             startActivity(intent);
         }
         else {
@@ -146,6 +164,8 @@ public class LessonPage extends AppCompatActivity {
             intent.putExtra("progress", currentSectionIndex + 1);
             intent.putExtra("sizeOfLesson", lessonSize);
             intent.putExtra("lessonID", currentLessonID);
+            intent.putExtra("unit", unit);
+            intent.putExtra("jsonArray", jsonArray);
             startActivity(intent);
         }
 //        System.out.println("Progress is:" + currentSectionIndex);
@@ -218,6 +238,8 @@ public class LessonPage extends AppCompatActivity {
                         intent.putExtra("progress", buttonIndex);
                         intent.putExtra("sizeOfLesson", lessonSize);
                         intent.putExtra("lessonID", currentLessonID);
+                        intent.putExtra("unit", unit);
+                        intent.putExtra("jsonArray", jsonArray);
                         startActivity(intent);
                     }
                 }

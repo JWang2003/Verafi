@@ -44,6 +44,9 @@ public class QuizPage extends AppCompatActivity {
     ArrayList<Button> buttonChoices = new ArrayList<>();
     ArrayList<ImageButton> mImageButtonArray = new ArrayList<>();
 
+    Unit unit;
+    String jsonArray;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +70,15 @@ public class QuizPage extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(QuizPage.this, UnitPage.class);
+        intent.putExtra("unit", unit);
+        intent.putExtra("jsonArray", jsonArray);
+        startActivity(intent);
+    }
+
     private void processIntents() {
         Intent intent = getIntent();
         currentLessonID = intent.getStringExtra("lessonID");
@@ -75,6 +87,8 @@ public class QuizPage extends AppCompatActivity {
         allSections = dataAccess.getLessonSections(currentLessonID);
         currentSection = allSections.get(currentSectionIndex);
         totalProgress = db.getProgress(currentLessonID);
+        unit = intent.getParcelableExtra("unit");
+        jsonArray = intent.getStringExtra("jsonArray");
     }
 
     private void connectXML() throws JSONException {
@@ -181,7 +195,9 @@ public class QuizPage extends AppCompatActivity {
         if (currentSectionIndex + 1 >= lessonSize) {
             // TODO: NAVIGATE TO UNIT PAGE, NOT MAINACTIVITY
             System.out.println("NAVIGATE TO UNIT PAGE");
-            intent = new Intent(QuizPage.this, MainActivity.class);
+            intent = new Intent(QuizPage.this, UnitPage.class);
+            intent.putExtra("unit", unit);
+            intent.putExtra("jsonArray", jsonArray);
             startActivity(intent);
         }
         else {
@@ -192,6 +208,8 @@ public class QuizPage extends AppCompatActivity {
             intent.putExtra("progress", currentSectionIndex + 1);
             intent.putExtra("sizeOfLesson", lessonSize);
             intent.putExtra("lessonID", currentLessonID);
+            intent.putExtra("unit", unit);
+            intent.putExtra("jsonArray", jsonArray);
             startActivity(intent);
         }
         // Handle the case where user is redoing old lessons, don't change the progress
@@ -281,6 +299,8 @@ public class QuizPage extends AppCompatActivity {
                         intent.putExtra("progress", buttonIndex);
                         intent.putExtra("sizeOfLesson", lessonSize);
                         intent.putExtra("lessonID", currentLessonID);
+                        intent.putExtra("unit", unit);
+                        intent.putExtra("jsonArray", jsonArray);
                         startActivity(intent);
                     }
                 }

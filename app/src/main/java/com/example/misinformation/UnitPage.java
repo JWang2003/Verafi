@@ -66,9 +66,9 @@ public class UnitPage extends AppCompatActivity {
     private void processIntents() {
         Intent intent = getIntent();
         unit = intent.getParcelableExtra("unit");
+        jsonArray = intent.getStringExtra("jsonArray");
         System.out.println(unit);
         System.out.println("PRINTED UNIT");
-        jsonArray = intent.getStringExtra("jsonArray");
     }
 
     private void connectXML() {
@@ -106,12 +106,16 @@ public class UnitPage extends AppCompatActivity {
             intent.putExtra("progress", progress);
             intent.putExtra("sizeOfLesson", mLesson.sectionNames.size());
             intent.putExtra("lessonID", mLesson.id);
+            intent.putExtra("unit", unit);
+            intent.putExtra("jsonArray", jsonArray);
             startActivity(intent);
         } else if (progress % 2 != 0) {
             Intent intent = new Intent(UnitPage.this, QuizPage.class);
             intent.putExtra("progress", progress);
             intent.putExtra("sizeOfLesson", mLesson.sectionNames.size());
             intent.putExtra("lessonID", mLesson.id);
+            intent.putExtra("unit", unit);
+            intent.putExtra("jsonArray", jsonArray);
             startActivity(intent);
         }
 
