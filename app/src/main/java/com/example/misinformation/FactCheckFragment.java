@@ -6,8 +6,10 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,6 +24,18 @@ import java.util.ArrayList;
 
 public class FactCheckFragment extends Fragment {
 
+    //Properties
+    FactCheckAPI factCheckAPI;
+    FactCheckAdapter factCheckAdapter;
+
+
+    //XML Views
+    RecyclerView factCheckRecyclerView;
+    EditText claimSearch;
+    Button searchButton;
+    String passedClaim;
+
+    // TODO: retract keyboard when hitting search button
     public FactCheckFragment() {
         // Required empty public constructor
     }
@@ -36,83 +50,66 @@ public class FactCheckFragment extends Fragment {
         return rootView;
     }
 
-//    //Properties
-//    FactCheckAPI factCheckAPI;
-//    FactCheckAdapter factCheckAdapter;
-//
-//
-//    //XML Views
-//    RecyclerView factCheckRecyclerView;
-//    EditText claimSearch;
-//    Button searchButton;
-//    String passedClaim;
-////    RecyclerView recyclerView;
-//
-//
-//    @Override
-//    public void onActivityCreated(Bundle savedInstanceState) {
-//        super.onActivityCreated(savedInstanceState);
-//        System.out.println("fce connect xml");
-//        connectXML();
-//        System.out.println("fce onclick setup");
-//        onClickSetup();
-//        System.out.println("fce get intent");
-//        getIntents();
-//
-//
-//        startSearch();
-//    }
-//
-//    private void startSearch() {
-//        searchClaim();
-//        recyclerViewSetup();
-//    }
-//
-//
-//    private synchronized void searchClaim() {
-//        System.out.println("new factcheck obj created");
-//        factCheckAPI = new FactCheckAPI(claimSearch.getText().toString());
-//    }
-//
-//    private synchronized void recyclerViewSetup() {
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL, false);
-//        factCheckRecyclerView = getView().findViewById(R.id.claims_recycle);
-//        factCheckRecyclerView.setLayoutManager(linearLayoutManager);
-//
-//        System.out.println(factCheckAPI.claimsList.size());
-//        factCheckAdapter = new FactCheckAdapter(this, factCheckAPI.claimsList, this);
-//        factCheckRecyclerView.setAdapter(factCheckAdapter);
-//        factCheckAdapter.notifyDataSetChanged();
-//        factCheckRecyclerView.setHasFixedSize(false);
-//    }
-//
-//
-//
-//    private void connectXML() {
-//        claimSearch = getView().findViewById(R.id.claimInput);
-//        searchButton = getView().findViewById(R.id.fce_searchButton);
-//    }
-//
-//    private void onClickSetup() {
-//        searchButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (claimSearch.getText().toString() != null && claimSearch.getText().toString() != "") {
-//                    startSearch();
-//                }
-//            }
-//        });
-//    }
-//
-//    private void getIntents() { ;
-//        //
-//    }
-//
-//
-//    public void rvOnClick(int position) {
-//        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(factCheckAPI.claimsList.get(position).getUrl()));
-//        startActivity(browserIntent);
-//    }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        connectXML();
+        onClickSetup();
+        startSearch();
+
+    }
+
+    private void startSearch() {
+        searchClaim();
+        recyclerViewSetup();
+    }
 
 
+    private synchronized void searchClaim() {
+        System.out.println("new factcheck obj created");
+        // What user searched
+        factCheckAPI = new FactCheckAPI(claimSearch.getText().toString());
+    }
+
+
+    private synchronized void recyclerViewSetup() {
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext(), RecyclerView.VERTICAL, false);
+        factCheckRecyclerView = getView().findViewById(R.id.claims_recycle);
+        factCheckRecyclerView.setLayoutManager(linearLayoutManager);
+
+        System.out.println(factCheckAPI.claimsList.size());
+        factCheckAdapter = new FactCheckAdapter(getActivity().getApplicationContext(), factCheckAPI.claimsList);
+        factCheckRecyclerView.setAdapter(factCheckAdapter);
+        factCheckAdapter.notifyDataSetChanged();
+        factCheckRecyclerView.setHasFixedSize(false);
+
+    }
+
+    private void connectXML() {
+        claimSearch = getView().findViewById(R.id.claimInput);
+        searchButton = getView().findViewById(R.id.fce_searchButton);
+    }
+
+    private void onClickSetup() {
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("CLICKED");
+                if (claimSearch.getText().toString() != null && claimSearch.getText().toString() != "") {
+                    startSearch();
+                }
+            }
+        });
+    }
+    private void updateFrag() {
+        if (getFragmentManager() != null) {
+
+            getFragmentManager()
+                    .beginTransaction()
+                    .detach(this)
+                    .attach(this)
+                    .commit();
+        }
+    }
 }

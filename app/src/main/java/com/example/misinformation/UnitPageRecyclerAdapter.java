@@ -107,7 +107,6 @@ public class UnitPageRecyclerAdapter extends RecyclerView.Adapter<UnitPageRecycl
         }
         holder.mProgressBar.setProgress(percentage);
 
-        //TODO: DYNAMICALLY SHOWING SECTIONS
         for (int i = 0; i < currentLesson.sectionNames.size(); i++) {
             holder.mLinearLayoutArray.get(i).setVisibility(View.VISIBLE);
             holder.mTextViewArray.get(i).setText(currentLesson.sectionNames.get(i));

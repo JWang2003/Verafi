@@ -19,13 +19,8 @@ public class FactCheckAdapter extends RecyclerView.Adapter<FactCheckViewHolder> 
     Context context;
     ArrayList<Claim> claimsList;
 
-    public FactCheckAdapter(Context context, ArrayList<Claim> claimsList, FactCheckViewHolder.OnClickListener onClickListener) {
-        this.context = context;
-        this.claimsList = claimsList;
-        this.onClickListener = onClickListener;
-    }
-
-    public FactCheckAdapter(FactCheckFragment factCheckFragment, ArrayList<Claim> claimsList, FactCheckFragment factCheckFragment1) {
+    // TODO: Set up onClickListener
+    public FactCheckAdapter(Context context, ArrayList<Claim> claimsList) {
         this.context = context;
         this.claimsList = claimsList;
         this.onClickListener = onClickListener;
@@ -43,15 +38,16 @@ public class FactCheckAdapter extends RecyclerView.Adapter<FactCheckViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull FactCheckViewHolder holder, int position) {
         Claim claim = claimsList.get(position);
-
-        holder.claimTitleV.setText(claim.getTitle());
-        holder.claimDateV.setText(claim.getClaimDate());
-        holder.claimClaimantV.setText(claim.getClaimant());
-        holder.claimSourceV.setText(claim.getSource());
-        holder.claimReviewDateV.setText(claim.getReviewDate());
-        holder.claimRatingV.setText(claim.getClaimRating());
-        holder.publisherNameV.setText(claim.getPublisherName());
-        holder.publisherSiteV.setText(claim.getPublisherSite());
+        System.out.println("THIS IS THE ADAOTER");
+        System.out.println(claim);
+        holder.claimTitleV.setText(claim.title);
+        holder.claimDateV.setText(claim.claimDate);
+        holder.claimClaimantV.setText(claim.claimant);
+        holder.claimSourceV.setText(claim.source);
+        holder.claimReviewDateV.setText(claim.reviewDate);
+        holder.claimRatingV.setText(claim.claimRating);
+        holder.publisherNameV.setText(claim.publisherName);
+        holder.publisherSiteV.setText(claim.publisherSite);
 
     }
 

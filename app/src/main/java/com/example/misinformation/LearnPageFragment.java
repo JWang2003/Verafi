@@ -47,7 +47,6 @@ public class LearnPageFragment extends Fragment {
         dataAccess = new DataAccess(getActivity());
         databaseAccess = DatabaseAccess.getInstance(getActivity().getApplicationContext());
 
-        //todo; GET LIST OF UNITS FROM DB
         mUnitList = dataAccess.getUnits();
         System.out.println(mUnitList);
 

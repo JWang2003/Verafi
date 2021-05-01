@@ -53,15 +53,12 @@ public class FactCheckAPI {
                         try {
                             //Look for nextPageToken
                             try {
-                                System.out.println("init yes nextPageToken");
                                 nextPageToken = response.getString("nextPageToken");
                             } catch (JSONException e) {
-                                System.out.println("init no nextPageToken");
                                 nextPage = false;
                             }
 
                             JSONArray claims = response.getJSONArray("claims");
-                            System.out.println("running for loop");
                             for (int i = 0; i < claims.length() - 1; i++) {
 //                                System.out.println("for loop running " + i);
                                 JSONObject currentClaim = claims.getJSONObject(i);
@@ -142,7 +139,7 @@ public class FactCheckAPI {
 //                                System.out.println("publisherSite: " + publisherSite);
 
 
-
+                                System.out.println(new Claim(title, claimant, claimDate, source, reviewDate, claimRating, publisherName, publisherSite, url));
                                 claimsList.add(new Claim(title, claimant, claimDate, source, reviewDate, claimRating, publisherName, publisherSite, url));
                         }
                             if (nextPage) {

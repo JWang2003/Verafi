@@ -21,7 +21,6 @@ public class UnitPage extends AppCompatActivity {
 
     JSONArray lessons;
     String jsonArray;
-    // TODO: Generate all section names for each lesson
     RecyclerView mRecyclerView;
     GridLayoutManager mLayoutManager;
     UnitPageRecyclerAdapter mAdapter;
@@ -53,7 +52,6 @@ public class UnitPage extends AppCompatActivity {
                 String name = lessons.getJSONObject(i).getString("lesson");
                 int progress = 0;
                 ArrayList<String> secNames = dataAccess.getSectionNames(id);
-                // TODO: Generate Progress
                 ArrayList<Integer> secProgress = new ArrayList<Integer>();
                 theLessons.add(new Lesson(id, progress, name, secNames, secProgress));
             }
@@ -92,7 +90,6 @@ public class UnitPage extends AppCompatActivity {
     private void openLesson(int selectedLesson) {
         Lesson mLesson = mLessonList.get(selectedLesson);
         int progress = databaseAccess.getProgress(mLesson.id);
-        //TODO: Be able to tell if we must open a quiz or lesson page based on progress, determine what section we need to get
         if (progress == mLesson.sectionNames.size()) {
             progress = progress - 1;
         }

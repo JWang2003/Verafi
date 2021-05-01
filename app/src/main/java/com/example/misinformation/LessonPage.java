@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.JsonArray;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -57,12 +59,9 @@ public class LessonPage extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        // TODO: DELETE THIS
-
     }
 
     private void processIntents() {
-        // TODO: Make navigate to last section if progress = la
         Intent intent = getIntent();
 
         currentLessonID = intent.getStringExtra("lessonID");

@@ -179,13 +179,11 @@ public class QuizPage extends AppCompatActivity {
         }
         // If size = 6, and index + 1 == 6, that means we are currently on the last section
         if (currentSectionIndex + 1 >= lessonSize) {
-            // TODO: NAVIGATE TO UNIT PAGE, NOT MAINACTIVITY
             System.out.println("NAVIGATE TO UNIT PAGE");
             intent = new Intent(QuizPage.this, MainActivity.class);
             startActivity(intent);
         }
         else {
-            // TODO: Don't need to go to itself
 
             intent = new Intent(QuizPage.this, LessonPage.class);
 
