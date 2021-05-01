@@ -143,8 +143,318 @@
       "correct" : [2]
     }
   ],
-  "EvaluatingPhotosAndVideos" : [],
-  "EvaluatingDataAndInfographics" : [],
-  "ClickRestraint" : [],
-  "SocialMedia" : []
+
+  "EvaluatingPhotosAndVideos" : [
+    {
+      "type" : "lesson",
+      "name" : "Doctored Photos and Videos (photoshop) + Deepfakes",
+      "content" : {
+      }
+    },
+
+    {
+      "type" : "quiz",
+      "name" : "Comprehension Quiz",
+      "content" : {
+      },
+      "choices" : [
+
+      ],
+      "correct" : []
+    },
+
+    {
+      "type" : "lesson",
+      "name" : "False context",
+      "content" : {
+      }
+    },
+
+    {
+      "type" : "quiz",
+      "name" : "Fukushima flower quiz",
+      "content" : {
+        "text" : "Apply your lateral reading skills and decide if this website is credible or not.",
+        "website" : "https://www.narconon.org/"
+      },
+      "choices" : [
+        "Yes this website is credible",
+        "No this website is not credible"
+      ],
+      "correct" : [2]
+    },
+
+    {
+      "type" : "lesson",
+      "name" : "Google reverse image search",
+      "content" : {
+        "text" : "Sometimes, a simple Wikipedia search may not be enough to verify a source. Another option is to consult a fact-checking website. Verified and known resources such as Snopes, PolitiFact and AP Fact Check are incredibly useful tools to incorporate into the lateral reading process, as they specialize in identifying false or misleading information. Thus, another way to apply lateral reading is to look up the topic in question in one of several accepted fact-checking websites. "
+      }
+    },
+
+    {
+      "type" : "quiz",
+      "name" : "Quiz: Where did the image come from?",
+      "content" : {
+        "text" : "Apply your lateral reading skills and decide if this event really occurred.",
+        "website" : "https://twitter.com/Gatsbyspants/status/1374495246034247681"
+      },
+      "choices" : [
+        "No this event did not occur",
+        "Yes this event did occur"
+      ],
+      "correct" : [2]
+    },
+    {
+      "type" : "lesson",
+      "name" : "Searching for keywords",
+      "content" : {
+        "text" : "Sometimes, a simple Wikipedia search may not be enough to verify a source. Another option is to consult a fact-checking website. Verified and known resources such as Snopes, PolitiFact and AP Fact Check are incredibly useful tools to incorporate into the lateral reading process, as they specialize in identifying false or misleading information. Thus, another way to apply lateral reading is to look up the topic in question in one of several accepted fact-checking websites. "
+      }
+    },
+
+    {
+      "type" : "quiz",
+      "name" : "Quiz: Find where the video came from",
+      "content" : {
+        "text" : "Apply your lateral reading skills and decide if this event really occurred.",
+        "website" : "https://twitter.com/Gatsbyspants/status/1374495246034247681"
+      },
+      "choices" : [
+        "No this event did not occur",
+        "Yes this event did occur"
+      ],
+      "correct" : [2]
+    }
+  ],
+  "EvaluatingDataAndInfographics" : [
+    {
+    "type" : "lesson",
+    "name" : "Evaluating statistics",
+    "content" : {
+    }
+  },
+
+    {
+      "type" : "quiz",
+      "name" : "Comprehension Quiz",
+      "content" : {
+      },
+      "choices" : [
+
+      ],
+      "correct" : []
+    },
+
+    {
+      "type" : "lesson",
+      "name" : "Fallacies",
+      "content" : {
+      }
+    },
+
+    {
+      "type" : "quiz",
+      "name" : "Is it a fallacy?",
+      "content" : {
+        "text" : "Apply your lateral reading skills and decide if this website is credible or not.",
+        "website" : "https://www.narconon.org/"
+      },
+      "choices" : [
+        "Yes this website is credible",
+        "No this website is not credible"
+      ],
+      "correct" : [2]
+    },
+
+    {
+      "type" : "lesson",
+      "name" : "Reliability of Data",
+      "content" : {
+        "text" : "Sometimes, a simple Wikipedia search may not be enough to verify a source. Another option is to consult a fact-checking website. Verified and known resources such as Snopes, PolitiFact and AP Fact Check are incredibly useful tools to incorporate into the lateral reading process, as they specialize in identifying false or misleading information. Thus, another way to apply lateral reading is to look up the topic in question in one of several accepted fact-checking websites. "
+      }
+    },
+
+    {
+      "type" : "quiz",
+      "name" : "Quiz: Is it reliable data?",
+      "content" : {
+        "text" : "Apply your lateral reading skills and decide if this event really occurred.",
+        "website" : "https://twitter.com/Gatsbyspants/status/1374495246034247681"
+      },
+      "choices" : [
+        "No this event did not occur",
+        "Yes this event did occur"
+      ],
+      "correct" : [2]
+    },
+    {
+      "type" : "lesson",
+      "name" : "Graphs and Charts",
+      "content" : {
+        "text" : "Sometimes, a simple Wikipedia search may not be enough to verify a source. Another option is to consult a fact-checking website. Verified and known resources such as Snopes, PolitiFact and AP Fact Check are incredibly useful tools to incorporate into the lateral reading process, as they specialize in identifying false or misleading information. Thus, another way to apply lateral reading is to look up the topic in question in one of several accepted fact-checking websites. "
+      }
+    },
+
+    {
+      "type" : "quiz",
+      "name" : "Quiz: What's wrong with the graph?",
+      "content" : {
+        "text" : "Apply your lateral reading skills and decide if this event really occurred.",
+        "website" : "https://twitter.com/Gatsbyspants/status/1374495246034247681"
+      },
+      "choices" : [
+        "No this event did not occur",
+        "Yes this event did occur"
+      ],
+      "correct" : [2]
+    }],
+
+  "ClickRestraint" : [
+    {
+      "type" : "lesson",
+      "name" : "What is click restraint?",
+      "content" : {
+      }
+    },
+
+    {
+      "type" : "quiz",
+      "name" : "Comprehension Quiz",
+      "content" : {
+      },
+      "choices" : [
+
+      ],
+      "correct" : []
+    },
+
+    {
+      "type" : "lesson",
+      "name" : "Why is it important?",
+      "content" : {
+      }
+    },
+
+    {
+      "type" : "quiz",
+      "name" : "Comprehension Quiz",
+      "content" : {
+        "text" : "Apply your lateral reading skills and decide if this website is credible or not.",
+        "website" : "https://www.narconon.org/"
+      },
+      "choices" : [
+        "Yes this website is credible",
+        "No this website is not credible"
+      ],
+      "correct" : [2]
+    },
+
+    {
+      "type" : "lesson",
+      "name" : "When to use click restraint",
+      "content" : {
+        "text" : "Sometimes, a simple Wikipedia search may not be enough to verify a source. Another option is to consult a fact-checking website. Verified and known resources such as Snopes, PolitiFact and AP Fact Check are incredibly useful tools to incorporate into the lateral reading process, as they specialize in identifying false or misleading information. Thus, another way to apply lateral reading is to look up the topic in question in one of several accepted fact-checking websites. "
+      }
+    },
+
+    {
+      "type" : "quiz",
+      "name" : "Comprehension Quiz",
+      "content" : {
+        "text" : "Apply your lateral reading skills and decide if this event really occurred.",
+        "website" : "https://twitter.com/Gatsbyspants/status/1374495246034247681"
+      },
+      "choices" : [
+        "No this event did not occur",
+        "Yes this event did occur"
+      ],
+      "correct" : [2]
+    }
+  ],
+
+  "SocialMedia" : [
+    {
+      "type" : "lesson",
+      "name" : "What is social media?",
+      "content" : {
+      }
+    },
+
+    {
+      "type" : "quiz",
+      "name" : "Comprehension Quiz",
+      "content" : {
+      },
+      "choices" : [
+
+      ],
+      "correct" : []
+    },
+
+    {
+      "type" : "lesson",
+      "name" : "Ads",
+      "content" : {
+      }
+    },
+
+    {
+      "type" : "quiz",
+      "name" : "Quiz: Is it an ad?",
+      "content" : {
+        "text" : "Apply your lateral reading skills and decide if this website is credible or not.",
+        "website" : "https://www.narconon.org/"
+      },
+      "choices" : [
+        "Yes this website is credible",
+        "No this website is not credible"
+      ],
+      "correct" : [2]
+    },
+
+    {
+      "type" : "lesson",
+      "name" : "Target Advertising",
+      "content" : {
+        "text" : "Sometimes, a simple Wikipedia search may not be enough to verify a source. Another option is to consult a fact-checking website. Verified and known resources such as Snopes, PolitiFact and AP Fact Check are incredibly useful tools to incorporate into the lateral reading process, as they specialize in identifying false or misleading information. Thus, another way to apply lateral reading is to look up the topic in question in one of several accepted fact-checking websites. "
+      }
+    },
+
+    {
+      "type" : "quiz",
+      "name" : "Comprehension Quiz",
+      "content" : {
+        "text" : "Apply your lateral reading skills and decide if this event really occurred.",
+        "website" : "https://twitter.com/Gatsbyspants/status/1374495246034247681"
+      },
+      "choices" : [
+        "No this event did not occur",
+        "Yes this event did occur"
+      ],
+      "correct" : [2]
+    },
+
+    {
+      "type" : "lesson",
+      "name" : "Confirmation Bias",
+      "content" : {
+        "text" : "Sometimes, a simple Wikipedia search may not be enough to verify a source. Another option is to consult a fact-checking website. Verified and known resources such as Snopes, PolitiFact and AP Fact Check are incredibly useful tools to incorporate into the lateral reading process, as they specialize in identifying false or misleading information. Thus, another way to apply lateral reading is to look up the topic in question in one of several accepted fact-checking websites. "
+      }
+    },
+
+    {
+      "type" : "quiz",
+      "name" : "Comprehension Quiz",
+      "content" : {
+        "text" : "Apply your lateral reading skills and decide if this event really occurred.",
+        "website" : "https://twitter.com/Gatsbyspants/status/1374495246034247681"
+      },
+      "choices" : [
+        "No this event did not occur",
+        "Yes this event did occur"
+      ],
+      "correct" : [2]
+    }
+  ]
 }

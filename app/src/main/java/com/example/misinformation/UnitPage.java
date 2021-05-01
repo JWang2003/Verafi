@@ -43,6 +43,14 @@ public class UnitPage extends AppCompatActivity {
         connectXML();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(UnitPage.this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
     private ArrayList<Lesson> getLessonsArray() {
         ArrayList<Lesson> theLessons = new ArrayList<Lesson>();
         try {

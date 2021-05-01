@@ -2,55 +2,161 @@
   "Units" : [
     {
       "id" : "unit1",
+      "available" : true,
       "name": "Evaluating Sources",
       "numberOfSections": 12,
       "progress": 0,
       "lessons": [
         {
           "id" : "Introduction",
+          "available" : true,
           "lesson": "Introduction",
           "progress": 0
         },
         {
           "id" : "LateralReading",
+          "available" : true,
           "lesson": "Lateral Reading",
           "progress": 0
         },
         {
           "id" : "EvaluatingPhotosAndVideos",
-          "lesson": "Evaluating Photos and Videos",
+          "available" : false,
+          "lesson": "Evaluating Photos and Videos (Coming Soon)",
           "progress": 0
         },
         {
           "id" : "EvaluatingDataAndInfographics",
-          "lesson": "Evaluating Data and Infographics",
+          "available" : false,
+          "lesson": "Evaluating Data and Infographics (Coming Soon)",
           "progress": 0
         },
         {
           "id" : "ClickRestraint",
-          "lesson": "Click Restraint",
+          "available" : false,
+          "lesson": "Click Restraint (Coming Soon)",
           "progress": 0
         },
         {
           "id" : "SocialMedia",
-          "lesson": "Social Media",
+          "available" : false,
+          "lesson": "Social Media (Coming Soon)",
+          "progress": 0
+        }
+      ]
+    },
+    {
+      "id": "unit2",
+      "available": false,
+      "name": "Bots (Coming Soon)",
+      "numberOfSections": 0,
+      "progress": 0,
+      "lessons": [
+        {
+          "id": "WhatAreBots",
+          "available" : false,
+          "lesson": "What are bots?",
+          "progress": 0
+        },
+        {
+          "id": "RedFlags",
+          "available" : false,
+          "lesson": "Red Flags",
+          "progress": 0
+        },
+        {
+          "id": "TypesOfBots",
+          "available" : false,
+          "lesson": "Types of Bots",
+          "progress": 0
+        },
+        {
+          "id": "WhyAreBotsUsed",
+          "available" : false,
+          "lesson": "Why are Bots Used?",
+          "progress": 0
+        },
+        {
+          "id": "DealingWithBots",
+          "available" : false,
+          "lesson": "Dealing with Bots",
           "progress": 0
         }
       ]
     },
 
     {
-      "id" : "unit2",
-      "name" : "In Progress",
-      "numberOfSections" : 0,
-      "progress" : 0,
-      "lessons" : [
+      "id" : "unit3",
+      "available" : false,
+      "name": "Hoaxes/Scams (Coming Soon)",
+      "numberOfSections": 0,
+      "progress": 0,
+      "lessons": [
         {
+          "id" : "WhatIsAHoax",
+          "available" : false,
+          "lesson": "What is a Hoax?",
+          "progress": 0
+        },
+        {
+          "id" : "CommonSigns",
+          "available" : false,
+          "lesson": "Common Signs",
+          "progress": 0
+        },
+        {
+          "id" : "WhoIsVulnerable",
+          "available" : false,
+          "lesson": "Who is Vulnerable?",
+          "progress": 0
+        },
+        {
+          "id" : "ProtectYourself",
+          "available" : false,
+          "lesson": "Protect Yourself",
+          "progress": 0
+        }
+      ]
+    },
 
+    {
+      "id" : "unit4",
+      "available" : false,
+      "name": "Echo Chambers (Coming Soon)",
+      "numberOfSections": 0,
+      "progress": 0,
+      "lessons": [
+        {
+          "id" : "WhatIsAnEchoChamber",
+          "available" : false,
+          "lesson": "What is an Echo Chamber?",
+          "progress": 0
+        },
+        {
+          "id" : "WhereEchoChambersAreFound",
+          "available" : false,
+          "lesson": "Where Echo Chambers Are Found",
+          "progress": 0
+        },
+        {
+          "id" : "AreYouInAnEchoChamber",
+          "available" : false,
+          "lesson": "Are you in an Echo Chamber?",
+          "progress": 0
+        },
+        {
+          "id" : "WhatsTheHarm",
+          "available" : false,
+          "lesson": "What's the Harm?",
+          "progress": 0
+        },
+        {
+          "id" : "GettingOut",
+          "available" : false,
+          "lesson": "Getting Out",
+          "progress": 0
         }
       ]
     }
-
   ]
-
 }
