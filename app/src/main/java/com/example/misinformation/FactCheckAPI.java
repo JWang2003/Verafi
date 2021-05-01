@@ -17,11 +17,13 @@ public class FactCheckAPI {
     private Boolean nextPage;
     private String nextPageToken = "";
     private String currentPageToken = "";
+    private FactCheckFragment callback;
 
 
-    public FactCheckAPI(String searchQuery) {
+    public FactCheckAPI(String searchQuery, FactCheckFragment callback) {
         this.searchQuery = searchQuery;
         claimsList = new ArrayList<>();
+        this.callback = callback;
         nextPage = true;
         search();
     }
@@ -141,6 +143,7 @@ public class FactCheckAPI {
 
                                 System.out.println(new Claim(title, claimant, claimDate, source, reviewDate, claimRating, publisherName, publisherSite, url));
                                 claimsList.add(new Claim(title, claimant, claimDate, source, reviewDate, claimRating, publisherName, publisherSite, url));
+                                callback.didReceivedNewSearchResult(claimsList);
                         }
                             if (nextPage) {
                                 consecutiveSearch();

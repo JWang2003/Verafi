@@ -38,7 +38,6 @@ public class FactCheckAdapter extends RecyclerView.Adapter<FactCheckViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull FactCheckViewHolder holder, int position) {
         Claim claim = claimsList.get(position);
-        System.out.println("THIS IS THE ADAOTER");
         System.out.println(claim);
         holder.claimTitleV.setText(claim.title);
         holder.claimDateV.setText(claim.claimDate);

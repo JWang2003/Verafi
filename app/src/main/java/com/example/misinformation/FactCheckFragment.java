@@ -62,6 +62,12 @@ public class FactCheckFragment extends Fragment {
 
     }
 
+    // Handle
+    public synchronized void didReceivedNewSearchResult(ArrayList<Claim> claimsList) {
+        System.out.println("# > didReceivedNewSearchResult new size: "+ claimsList.size());
+        //TODO: update ui
+    }
+
     private void startSearch() {
         searchClaim();
         recyclerViewSetup();
@@ -71,7 +77,7 @@ public class FactCheckFragment extends Fragment {
     private synchronized void searchClaim() {
         System.out.println("new factcheck obj created");
         // What user searched
-        factCheckAPI = new FactCheckAPI(claimSearch.getText().toString());
+        factCheckAPI = new FactCheckAPI(claimSearch.getText().toString(), this);
     }
 
 
