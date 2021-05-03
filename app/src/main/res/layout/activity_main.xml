@@ -25,7 +25,7 @@
             android:fontFamily="@font/avenir_bold"
             android:text="Learn"
             android:textColor="@color/black"
-            android:textSize="30sp"
+            android:textSize="38sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,9 +47,9 @@
             android:id="@+id/toggle"
             android:layout_width="358dp"
             android:layout_height="30dp"
-            android:layout_marginStart="26dp"
-            android:layout_marginLeft="26dp"
-            android:layout_marginTop="101dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="27dp"
             android:layout_marginRight="27dp"
             android:background="@drawable/toggle_outline"
@@ -59,7 +59,7 @@
             android:outlineProvider="background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/top_text">
 
             <RadioButton
                 android:id="@+id/Learn"
@@ -88,7 +88,7 @@
                 android:button="@null"
                 android:fontFamily="@font/avenir_bold"
                 android:gravity="center"
-                android:text="Factcheck"
+                android:text="Fact Check"
                 android:textColor="@color/black" />
 
 
@@ -100,10 +100,11 @@
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
     </androidx.viewpager.widget.ViewPager>
 
