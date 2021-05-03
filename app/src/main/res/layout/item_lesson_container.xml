@@ -11,7 +11,7 @@
         app:cardCornerRadius="20dp"
         app:cardElevation="10dp"
         android:id="@+id/unit_lesson_card"
-        android:layout_margin="20dp">
+        android:layout_margin="35dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:autoSizeTextType="uniform"
-                android:fontFamily="@font/open_sans_bold"
+                android:fontFamily="@font/avenir_bold"
                 android:gravity="center_vertical|start"
                 android:text="%LessonName%"
                 android:textColor="#000000"
@@ -69,16 +69,17 @@
                         android:id="@+id/unit_sub_linear_0_icon"/>
 
                     <TextView
+                        android:id="@+id/unit_sub_linear_0_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="%Section%"
                         android:layout_marginLeft="20dp"
-                        android:fontFamily="@font/open_sans_semibold"
-                        android:textSize="14sp"
-                        android:textColor="#000000"
                         android:autoSizeTextType="uniform"
+                        android:fontFamily="@font/avenir_regular"
+                        android:textStyle="bold"
                         android:gravity="center_vertical|start"
-                        android:id="@+id/unit_sub_linear_0_name" />
+                        android:text="%Section%"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 
@@ -104,7 +105,8 @@
                         android:layout_height="wrap_content"
                         android:text="%Section%"
                         android:layout_marginLeft="20dp"
-                        android:fontFamily="@font/open_sans_semibold"
+                        android:fontFamily="@font/avenir_regular"
+                        android:textStyle="bold"
                         android:textSize="14sp"
                         android:textColor="#000000"
                         android:autoSizeTextType="uniform"
@@ -135,7 +137,8 @@
                         android:layout_height="wrap_content"
                         android:text="%Section%"
                         android:layout_marginLeft="20dp"
-                        android:fontFamily="@font/open_sans_semibold"
+                        android:fontFamily="@font/avenir_regular"
+                        android:textStyle="bold"
                         android:textSize="14sp"
                         android:textColor="#000000"
                         android:autoSizeTextType="uniform"
@@ -166,7 +169,8 @@
                         android:layout_height="wrap_content"
                         android:text="%Section%"
                         android:layout_marginLeft="20dp"
-                        android:fontFamily="@font/open_sans_semibold"
+                        android:fontFamily="@font/avenir_regular"
+                        android:textStyle="bold"
                         android:textSize="14sp"
                         android:textColor="#000000"
                         android:autoSizeTextType="uniform"
@@ -197,7 +201,8 @@
                         android:layout_height="wrap_content"
                         android:text="%Section%"
                         android:layout_marginLeft="20dp"
-                        android:fontFamily="@font/open_sans_semibold"
+                        android:fontFamily="@font/avenir_regular"
+                        android:textStyle="bold"
                         android:textSize="14sp"
                         android:textColor="#000000"
                         android:autoSizeTextType="uniform"
@@ -228,7 +233,8 @@
                         android:layout_height="wrap_content"
                         android:text="%Section%"
                         android:layout_marginLeft="20dp"
-                        android:fontFamily="@font/open_sans_semibold"
+                        android:fontFamily="@font/avenir_regular"
+                        android:textStyle="bold"
                         android:textSize="14sp"
                         android:textColor="#000000"
                         android:autoSizeTextType="uniform"
@@ -259,7 +265,8 @@
                         android:layout_height="wrap_content"
                         android:text="%Section%"
                         android:layout_marginLeft="20dp"
-                        android:fontFamily="@font/open_sans_semibold"
+                        android:fontFamily="@font/avenir_regular"
+                        android:textStyle="bold"
                         android:textSize="14sp"
                         android:textColor="#000000"
                         android:autoSizeTextType="uniform"
@@ -290,7 +297,8 @@
                         android:layout_height="wrap_content"
                         android:text="%Section%"
                         android:layout_marginLeft="20dp"
-                        android:fontFamily="@font/open_sans_semibold"
+                        android:fontFamily="@font/avenir_regular"
+                        android:textStyle="bold"
                         android:textSize="14sp"
                         android:textColor="#000000"
                         android:autoSizeTextType="uniform"

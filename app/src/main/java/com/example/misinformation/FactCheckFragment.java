@@ -35,7 +35,7 @@ public class FactCheckFragment extends Fragment {
     //XML Views
     RecyclerView factCheckRecyclerView;
     EditText claimSearch;
-    Button searchButton;
+    ImageButton searchButton;
     String passedClaim;
 
     // TODO: Fix bug where you have to click on editText to open
@@ -97,7 +97,7 @@ public class FactCheckFragment extends Fragment {
 
     private void connectXML() {
         claimSearch = getView().findViewById(R.id.claimInput);
-        searchButton = getView().findViewById(R.id.fce_searchButton);
+        searchButton = (ImageButton)getView().findViewById(R.id.fce_searchButton);
     }
 
     private void onClickSetup() {
