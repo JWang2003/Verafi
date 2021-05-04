@@ -130,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 viewPager.setCurrentItem(0, true);
+                radioGroup.check(R.id.Learn);
             }
         });
 
@@ -151,7 +152,6 @@ public class MainActivity extends AppCompatActivity {
                     topText.setText("Fact Check");
                     System.out.println("Fact check fragment");
                 }
-
             }
 
             @Override

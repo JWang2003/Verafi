@@ -151,7 +151,6 @@ public class LessonPage extends AppCompatActivity {
         }
         // If size = 6, and index + 1 == 6, that means we are currently on the last section
         if (currentSectionIndex + 1 >= lessonSize) {
-            // TODO: NAVGIATE TO UNITPAGE NOT MAIN
             System.out.println("NAVIGATE TO UNIT PAGE");
             intent = new Intent(LessonPage.this, UnitPage.class);
             intent.putExtra("unit", unit);
