@@ -21,6 +21,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -66,6 +67,7 @@ public class FactCheckFragment extends Fragment {
     // Handle
     public synchronized void didReceivedNewSearchResult(ArrayList<Claim> claimsList) {
         System.out.println("# > didReceivedNewSearchResult new size: "+ claimsList.size());
+
         //TODO: update ui
     }
 
@@ -78,7 +80,7 @@ public class FactCheckFragment extends Fragment {
     private synchronized void searchClaim() {
         System.out.println("new factcheck obj created");
         // What user searched
-        factCheckAPI = new FactCheckAPI(claimSearch.getText().toString(), this);
+        factCheckAPI = new FactCheckAPI(claimSearch.getText().toString(), this, getActivity().getApplicationContext());
     }
 
 
@@ -92,6 +94,14 @@ public class FactCheckFragment extends Fragment {
         factCheckRecyclerView.setAdapter(factCheckAdapter);
         factCheckAdapter.notifyDataSetChanged();
         factCheckRecyclerView.setHasFixedSize(false);
+        factCheckAdapter.setOnItemClickListener(new FactCheckAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Intent intent = new Intent(getActivity().getApplicationContext(), WebPage.class);
+                intent.putExtra("url", factCheckAPI.claimsList.get(position).url);
+                startActivity(intent);
+            }
+        });
 
     }
 

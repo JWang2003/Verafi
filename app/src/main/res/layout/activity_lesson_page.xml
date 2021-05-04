@@ -13,7 +13,7 @@
         android:layout_height="wrap_content">
 
     <LinearLayout
-        android:id="@+id/frameLayout"
+        android:id="@+id/lesson_page_top_bar"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:padding="25dp"
@@ -21,92 +21,122 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:layout_width="0dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="visible"
             android:src="@drawable/abc_vector_test"
-            app:tint="#C4C4C4"
             android:backgroundTint="#00000000"
-            android:scaleType="fitCenter"
-            android:id="@+id/lesson_top_icon_0"/>
+            android:tint="#000000"
+            android:id="@+id/lesson_page_back" />
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="visible"
-            android:src="@drawable/abc_vector_test"
-            app:tint="#C4C4C4"
-            android:backgroundTint="#00000000"
-            android:scaleType="fitCenter"
-            android:id="@+id/lesson_top_icon_1"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="visible"
-            android:src="@drawable/abc_vector_test"
-            app:tint="#C4C4C4"
-            android:backgroundTint="#00000000"
-            android:scaleType="fitCenter"
-            android:id="@+id/lesson_top_icon_2"/>
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:progressTint="#4ABD80"
+                android:id="@+id/lesson_prog_bar"
+                android:progressBackgroundTint="#C4C4C4"
+                android:layout_centerInParent="true"/>
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="visible"
-            android:src="@drawable/abc_vector_test"
-            app:tint="#C4C4C4"
-            android:backgroundTint="#00000000"
-            android:scaleType="fitCenter"
-            android:id="@+id/lesson_top_icon_3"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="gone"
-            android:src="@drawable/abc_vector_test"
-            app:tint="#C4C4C4"
-            android:backgroundTint="#00000000"
-            android:scaleType="fitCenter"
-            android:id="@+id/lesson_top_icon_4"/>
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="visible"
+                    android:src="@drawable/lesson_pic"
+                    app:tint="#C4C4C4"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/lesson_top_icon_0"/>
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="gone"
-            android:src="@drawable/abc_vector_test"
-            app:tint="#C4C4C4"
-            android:backgroundTint="#00000000"
-            android:scaleType="fitCenter"
-            android:id="@+id/lesson_top_icon_5"/>
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="visible"
+                    android:src="@drawable/lesson_pic"
+                    app:tint="#C4C4C4"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/lesson_top_icon_1"/>
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="gone"
-            android:src="@drawable/abc_vector_test"
-            app:tint="#C4C4C4"
-            android:backgroundTint="#00000000"
-            android:scaleType="fitCenter"
-            android:id="@+id/lesson_top_icon_6"/>
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="visible"
+                    android:src="@drawable/lesson_pic"
+                    app:tint="#C4C4C4"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/lesson_top_icon_2"/>
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="gone"
-            android:src="@drawable/abc_vector_test"
-            app:tint="#C4C4C4"
-            android:backgroundTint="#00000000"
-            android:scaleType="fitCenter"
-            android:id="@+id/lesson_top_icon_7"/>
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="visible"
+                    android:src="@drawable/lesson_pic"
+                    app:tint="#C4C4C4"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/lesson_top_icon_3"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:src="@drawable/lesson_pic"
+                    app:tint="#C4C4C4"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/lesson_top_icon_4"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:src="@drawable/lesson_pic"
+                    app:tint="#C4C4C4"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/lesson_top_icon_5"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:src="@drawable/lesson_pic"
+                    app:tint="#C4C4C4"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/lesson_top_icon_6"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:src="@drawable/lesson_pic"
+                    app:tint="#C4C4C4"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/lesson_top_icon_7"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
 
     </LinearLayout>
 
@@ -122,21 +152,23 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/lesson_page_top_bar" />
 
-    <TextView
-        android:id="@+id/lesson_name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        android:fontFamily="@font/avenir_bold"
-        android:text="%LessonName%"
-        android:textColor="@color/black"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/section_type" />
+        <TextView
+            android:id="@+id/lesson_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="35dp"
+            android:fontFamily="@font/avenir_bold"
+            android:lineSpacingExtra="10sp"
+            android:text="%LessonName%"
+            android:textColor="@color/black"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/section_type" />
 
         <TextView
             android:id="@+id/text"
@@ -146,10 +178,10 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="35dp"
             android:fontFamily="@font/avenir_regular"
-            android:lineSpacingExtra="3dp"
+            android:lineSpacingExtra="10sp"
             android:text="%LessonContent%"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -189,20 +221,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/website" />
 
-    <TextView
-        android:id="@+id/sources"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        android:fontFamily="@font/avenir_regular"
-        android:text="Sources"
-        android:textColor="@color/grey_text"
-        android:textSize="10sp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s_text" />
+        <TextView
+            android:id="@+id/sources"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:fontFamily="@font/avenir_regular"
+            android:lineSpacingExtra="4sp"
+            android:text="Sources"
+            android:textColor="@color/grey_text"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/s_text" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/continue_card"
@@ -213,21 +246,20 @@
             app:cardCornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text">
+            app:layout_constraintTop_toBottomOf="@+id/sources">
 
             <Button
                 android:id="@+id/continue_button"
                 android:layout_width="335dp"
                 android:layout_height="60dp"
                 android:background="#FFFFFF"
-                android:enabled="false"
                 android:fontFamily="@font/avenir_bold"
                 android:gravity="center"
                 android:text="Continue"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                app:backgroundTint="#E0E0E0"
+                app:backgroundTint="#4ABD80"
                 app:iconTint="#00FFFFFF" />
 
         </androidx.cardview.widget.CardView>

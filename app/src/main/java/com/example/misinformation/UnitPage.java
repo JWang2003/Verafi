@@ -3,12 +3,12 @@ package com.example.misinformation;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,7 +24,6 @@ public class UnitPage extends AppCompatActivity {
     String jsonArray;
     RecyclerView mRecyclerView;
     GridLayoutManager mLayoutManager;
-    LinearLayoutManager mLinearLayoutManager;
     UnitPageRecyclerAdapter mAdapter;
     ArrayList<Lesson> mLessonList;
     Unit unit;
@@ -32,6 +31,7 @@ public class UnitPage extends AppCompatActivity {
     DataAccess dataAccess;
     DatabaseAccess databaseAccess;
     TextView unitName;
+    ImageButton back_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +45,6 @@ public class UnitPage extends AppCompatActivity {
         connectXML();
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent intent = new Intent(UnitPage.this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-    }
-
     private ArrayList<Lesson> getLessonsArray() {
         ArrayList<Lesson> theLessons = new ArrayList<Lesson>();
         try {
@@ -60,7 +52,7 @@ public class UnitPage extends AppCompatActivity {
             for (int i = 0; i < lessons.length(); i++) {
                 String id = lessons.getJSONObject(i).getString("id");
                 String name = lessons.getJSONObject(i).getString("lesson");
-                int progress = 0;
+                int progress = lessons.getJSONObject(i).getInt("progress");
                 ArrayList<String> secNames = dataAccess.getSectionNames(id);
                 ArrayList<Integer> secProgress = new ArrayList<Integer>();
                 theLessons.add(new Lesson(id, progress, name, secNames, secProgress));
@@ -82,6 +74,7 @@ public class UnitPage extends AppCompatActivity {
     private void connectXML() {
         unitName = findViewById(R.id.unit_name);
         unitName.setText(unit.name);
+        back_button = findViewById(R.id.unit_back);
         mLayoutManager = new GridLayoutManager(this, 1, GridLayoutManager.VERTICAL, false);
         mRecyclerView = findViewById(R.id.unit_recycler_view);
         mAdapter = new UnitPageRecyclerAdapter(this, mLessonList);
@@ -90,11 +83,22 @@ public class UnitPage extends AppCompatActivity {
         mAdapter.setOnItemClickListener(new UnitPageRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                openLesson(position);
-                System.out.println("Lesson clicked at " + position);
+                if (mLessonList.get(position).lessonProgress != - 1) {
+                    openLesson(position);
+                } else {
+                    Toast.makeText(UnitPage.this, "Sorry, this lesson is not available currently", Toast.LENGTH_SHORT).show();
+                }
             }
-
         });
+
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UnitPage.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void openLesson(int selectedLesson) {
