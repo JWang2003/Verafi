@@ -1,5 +1,8 @@
 package com.example.misinformation;
 
+import android.content.Context;
+import android.widget.Toast;
+
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
@@ -18,13 +21,15 @@ public class FactCheckAPI {
     private String nextPageToken = "";
     private String currentPageToken = "";
     private FactCheckFragment callback;
+    Context context;
 
 
-    public FactCheckAPI(String searchQuery, FactCheckFragment callback) {
+    public FactCheckAPI(String searchQuery, FactCheckFragment callback, Context context) {
         this.searchQuery = searchQuery;
         claimsList = new ArrayList<>();
         this.callback = callback;
         nextPage = true;
+        this.context = context;
         search();
     }
 
@@ -154,7 +159,10 @@ public class FactCheckAPI {
                             e.printStackTrace();
                         }
 
-//                        test();
+                        if (claimsList.size() == 0) {
+                            Toast.makeText(context, "No results found", Toast.LENGTH_LONG).show();
+                        }
+
                     }
                     @Override
                     public void onError(ANError error) {
@@ -164,10 +172,5 @@ public class FactCheckAPI {
                 });
     }
 
-//    private void test() {
-//       for (int i = 0; i < claimsList.size(); i++) {
-//           System.out.println(claimsList.get(i).getTitle());
-//       }
-//    }
 }
 

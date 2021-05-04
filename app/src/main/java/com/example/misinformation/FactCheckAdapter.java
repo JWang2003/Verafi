@@ -98,7 +98,7 @@ public class FactCheckAdapter extends RecyclerView.Adapter<FactCheckAdapter.Fact
         holder.claimReviewDateV.setText(claim.reviewDate);
         holder.claimRatingV.setText(claim.claimRating);
 
-        // TODO: MAKE THIS NOT LOOK LIKE TRASH, CHANGE COLOURS
+        // TODO: CHANGE COLOURS
         // Change the colour of the card depending on if it's true/false
         if (claim.claimRating.toLowerCase().contains("true")) {
             holder.card.setCardBackgroundColor(Color.parseColor("#0978BE"));

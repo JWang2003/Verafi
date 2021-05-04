@@ -137,7 +137,6 @@ public class LearnFragmentRecyclerAdapter extends RecyclerView.Adapter<LearnFrag
         holder.mUnitName.setText(currentUnit.name);
         holder.setIsRecyclable(false);
 
-        //TODO: DYNAMICALLY SHOWING SECTIONS
         for (int i = 0; i < currentUnit.lessons.length(); i++) {
 
             ArrayList<String> sectionNames = new ArrayList<>();
