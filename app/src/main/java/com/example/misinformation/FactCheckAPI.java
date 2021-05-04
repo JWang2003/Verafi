@@ -162,6 +162,7 @@ public class FactCheckAPI {
                         } catch (JSONException e) {
                             System.out.println("Bad error has occurred");
                             e.printStackTrace();
+                            callback();
                         }
 
                         if (claimsList.size() == 0) {

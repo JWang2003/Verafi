@@ -22,6 +22,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -33,11 +34,15 @@ public class FactCheckFragment extends Fragment {
     FactCheckAPI factCheckAPI;
     FactCheckAdapter factCheckAdapter;
     private static FactCheckFragment instance; //The static has to stay for the whole thing to work
+    boolean lock = false;
+    String prevClaimString = "";
+    String claimString = "";
 
     //XML Views
     RecyclerView factCheckRecyclerView;
     EditText claimSearch;
     ImageButton searchButton;
+    ProgressBar progressBar;
 
     // TODO: Add loading circle
     public FactCheckFragment() {
@@ -83,9 +88,17 @@ public class FactCheckFragment extends Fragment {
     }
 
     private synchronized void searchClaim() {
+        prevClaimString = claimString;
+        claimString = claimSearch.getText().toString();
+        if (claimString.equals(prevClaimString)) {
+            return;
+        }
+        factCheckRecyclerView.setVisibility(View.GONE);
+        progressBar.setVisibility(View.VISIBLE);
+        progressBar.invalidate();
         System.out.println("new factcheck obj created");
         // What user searched
-        factCheckAPI = new FactCheckAPI(claimSearch.getText().toString(), this, getActivity().getApplicationContext());
+        factCheckAPI = new FactCheckAPI(claimString, this, getActivity().getApplicationContext());
     }
 
     private synchronized void recyclerViewInit() {
@@ -109,12 +122,16 @@ public class FactCheckFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
+        factCheckRecyclerView.setVisibility(View.VISIBLE);
+        System.out.println("view is gone");
+        progressBar.setVisibility(View.GONE);
     }
 
     private void connectXML() {
         claimSearch = getView().findViewById(R.id.claimInput);
         searchButton = (ImageButton)getView().findViewById(R.id.fce_searchButton);
+        progressBar = (ProgressBar) getView().findViewById(R.id.progress_bar);
+        progressBar.setVisibility(View.GONE);
     }
 
     private void onClickSetup() {
