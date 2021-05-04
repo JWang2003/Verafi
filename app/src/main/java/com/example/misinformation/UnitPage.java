@@ -3,6 +3,7 @@ package com.example.misinformation;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ public class UnitPage extends AppCompatActivity {
     String jsonArray;
     RecyclerView mRecyclerView;
     GridLayoutManager mLayoutManager;
+    LinearLayoutManager mLinearLayoutManager;
     UnitPageRecyclerAdapter mAdapter;
     ArrayList<Lesson> mLessonList;
     Unit unit;
@@ -80,7 +82,6 @@ public class UnitPage extends AppCompatActivity {
     private void connectXML() {
         unitName = findViewById(R.id.unit_name);
         unitName.setText(unit.name);
-
         mLayoutManager = new GridLayoutManager(this, 1, GridLayoutManager.VERTICAL, false);
         mRecyclerView = findViewById(R.id.unit_recycler_view);
         mAdapter = new UnitPageRecyclerAdapter(this, mLessonList);
@@ -92,6 +93,7 @@ public class UnitPage extends AppCompatActivity {
                 openLesson(position);
                 System.out.println("Lesson clicked at " + position);
             }
+
         });
     }
 
