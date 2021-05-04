@@ -189,20 +189,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/website" />
 
-    <TextView
-        android:id="@+id/sources"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        android:fontFamily="@font/avenir_regular"
-        android:text="Sources"
-        android:textColor="@color/grey_text"
-        android:textSize="10sp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s_text" />
+        <TextView
+            android:id="@+id/sources"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:fontFamily="@font/avenir_regular"
+            android:text="Sources"
+            android:textColor="@color/grey_text"
+            android:textSize="10sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/s_text" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/continue_card"
@@ -213,7 +213,7 @@
             app:cardCornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text">
+            app:layout_constraintTop_toBottomOf="@+id/sources">
 
             <Button
                 android:id="@+id/continue_button"
@@ -227,7 +227,7 @@
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                app:backgroundTint="#E0E0E0"
+                app:backgroundTint="#4ABD80"
                 app:iconTint="#00FFFFFF" />
 
         </androidx.cardview.widget.CardView>
