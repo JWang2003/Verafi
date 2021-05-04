@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class UnitPage extends AppCompatActivity {
     DataAccess dataAccess;
     DatabaseAccess databaseAccess;
     TextView unitName;
+    ImageButton back_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +43,6 @@ public class UnitPage extends AppCompatActivity {
 
         mLessonList = getLessonsArray();
         connectXML();
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent intent = new Intent(UnitPage.this, MainActivity.class);
-        startActivity(intent);
-        finishAffinity();
     }
 
     private ArrayList<Lesson> getLessonsArray() {
@@ -80,7 +74,7 @@ public class UnitPage extends AppCompatActivity {
     private void connectXML() {
         unitName = findViewById(R.id.unit_name);
         unitName.setText(unit.name);
-
+        back_button = findViewById(R.id.unit_back);
         mLayoutManager = new GridLayoutManager(this, 1, GridLayoutManager.VERTICAL, false);
         mRecyclerView = findViewById(R.id.unit_recycler_view);
         mAdapter = new UnitPageRecyclerAdapter(this, mLessonList);
@@ -93,6 +87,15 @@ public class UnitPage extends AppCompatActivity {
                 System.out.println("Lesson clicked at " + position);
             }
         });
+
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UnitPage.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void openLesson(int selectedLesson) {

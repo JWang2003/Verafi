@@ -13,7 +13,7 @@
         android:layout_height="wrap_content">
 
     <LinearLayout
-        android:id="@+id/frameLayout"
+        android:id="@+id/lesson_page_top_bar"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:padding="25dp"
@@ -21,92 +21,122 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:layout_width="0dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="visible"
             android:src="@drawable/abc_vector_test"
-            app:tint="#C4C4C4"
             android:backgroundTint="#00000000"
-            android:scaleType="fitCenter"
-            android:id="@+id/lesson_top_icon_0"/>
+            android:tint="#000000"
+            android:id="@+id/lesson_page_back" />
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="visible"
-            android:src="@drawable/abc_vector_test"
-            app:tint="#C4C4C4"
-            android:backgroundTint="#00000000"
-            android:scaleType="fitCenter"
-            android:id="@+id/lesson_top_icon_1"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="visible"
-            android:src="@drawable/abc_vector_test"
-            app:tint="#C4C4C4"
-            android:backgroundTint="#00000000"
-            android:scaleType="fitCenter"
-            android:id="@+id/lesson_top_icon_2"/>
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:progressTint="#4ABD80"
+                android:id="@+id/lesson_prog_bar"
+                android:progressBackgroundTint="#C4C4C4"
+                android:layout_centerInParent="true"/>
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="visible"
-            android:src="@drawable/abc_vector_test"
-            app:tint="#C4C4C4"
-            android:backgroundTint="#00000000"
-            android:scaleType="fitCenter"
-            android:id="@+id/lesson_top_icon_3"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="gone"
-            android:src="@drawable/abc_vector_test"
-            app:tint="#C4C4C4"
-            android:backgroundTint="#00000000"
-            android:scaleType="fitCenter"
-            android:id="@+id/lesson_top_icon_4"/>
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="visible"
+                    android:src="@drawable/lesson_pic"
+                    app:tint="#C4C4C4"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/lesson_top_icon_0"/>
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="gone"
-            android:src="@drawable/abc_vector_test"
-            app:tint="#C4C4C4"
-            android:backgroundTint="#00000000"
-            android:scaleType="fitCenter"
-            android:id="@+id/lesson_top_icon_5"/>
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="visible"
+                    android:src="@drawable/lesson_pic"
+                    app:tint="#C4C4C4"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/lesson_top_icon_1"/>
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="gone"
-            android:src="@drawable/abc_vector_test"
-            app:tint="#C4C4C4"
-            android:backgroundTint="#00000000"
-            android:scaleType="fitCenter"
-            android:id="@+id/lesson_top_icon_6"/>
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="visible"
+                    android:src="@drawable/lesson_pic"
+                    app:tint="#C4C4C4"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/lesson_top_icon_2"/>
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="gone"
-            android:src="@drawable/abc_vector_test"
-            app:tint="#C4C4C4"
-            android:backgroundTint="#00000000"
-            android:scaleType="fitCenter"
-            android:id="@+id/lesson_top_icon_7"/>
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="visible"
+                    android:src="@drawable/lesson_pic"
+                    app:tint="#C4C4C4"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/lesson_top_icon_3"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:src="@drawable/lesson_pic"
+                    app:tint="#C4C4C4"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/lesson_top_icon_4"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:src="@drawable/lesson_pic"
+                    app:tint="#C4C4C4"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/lesson_top_icon_5"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:src="@drawable/lesson_pic"
+                    app:tint="#C4C4C4"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/lesson_top_icon_6"/>
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:src="@drawable/lesson_pic"
+                    app:tint="#C4C4C4"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/lesson_top_icon_7"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
 
     </LinearLayout>
 
@@ -122,7 +152,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/lesson_page_top_bar" />
 
     <TextView
         android:id="@+id/lesson_name"

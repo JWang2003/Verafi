@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ImageButton;
@@ -25,6 +26,8 @@ public class QuizPage extends AppCompatActivity {
     TextView s_text;
     TextView description;
     Button continue_button;
+    ImageButton back_button;
+    ProgressBar prog_bar;
 
     DataAccess dataAccess;
     DatabaseAccess db;
@@ -70,15 +73,6 @@ public class QuizPage extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent intent = new Intent(QuizPage.this, UnitPage.class);
-        intent.putExtra("unit", unit);
-        intent.putExtra("jsonArray", jsonArray);
-        startActivity(intent);
-    }
-
     private void processIntents() {
         Intent intent = getIntent();
         currentLessonID = intent.getStringExtra("lessonID");
@@ -104,11 +98,22 @@ public class QuizPage extends AppCompatActivity {
         buttonChoices.add(findViewById(R.id.option3));
         buttonChoices.add(findViewById(R.id.option4));
         continue_button = findViewById(R.id.continue_button);
+        back_button = findViewById(R.id.quiz_page_back);
 
         continue_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 go_to_lesson();
+            }
+        });
+
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(QuizPage.this, UnitPage.class);
+                intent.putExtra("unit", unit);
+                intent.putExtra("jsonArray", jsonArray);
+                startActivity(intent);
             }
         });
 
@@ -266,6 +271,10 @@ public class QuizPage extends AppCompatActivity {
         mImageButtonArray.add(findViewById(R.id.quiz_top_icon_5));
         mImageButtonArray.add(findViewById(R.id.quiz_top_icon_6));
         mImageButtonArray.add(findViewById(R.id.quiz_top_icon_7));
+        prog_bar = findViewById(R.id.quiz_prog_bar);
+
+        prog_bar.setMax(allSections.size());
+        prog_bar.setProgress(totalProgress);
 
         for (int i = 0; i < allSections.size(); i++) {
             mImageButtonArray.get(i).setVisibility(View.VISIBLE);

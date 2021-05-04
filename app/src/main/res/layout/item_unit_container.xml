@@ -75,7 +75,7 @@
                                 android:scaleX="1.5"
                                 android:progress="80"
                                 app:indicatorColor="#4ABD80"
-                                app:trackColor="#C4C4C4"
+                                app:trackColor="#F8F8F8"
                                 android:id="@+id/main_unit_sub_prog_0"/>
 
                         </RelativeLayout>
@@ -122,7 +122,7 @@
                                 android:scaleX="1.5"
                                 android:progress="80"
                                 app:indicatorColor="#4ABD80"
-                                app:trackColor="#C4C4C4"
+                                app:trackColor="#F8F8F8"
                                 android:id="@+id/main_unit_sub_prog_1"/>
 
                         </RelativeLayout>
@@ -170,7 +170,7 @@
                                 android:scaleX="1.5"
                                 android:progress="80"
                                 app:indicatorColor="#4ABD80"
-                                app:trackColor="#C4C4C4"
+                                app:trackColor="#F8F8F8"
                                 android:id="@+id/main_unit_sub_prog_2"/>
 
                         </RelativeLayout>
@@ -217,7 +217,7 @@
                                 android:scaleX="1.5"
                                 android:progress="80"
                                 app:indicatorColor="#4ABD80"
-                                app:trackColor="#C4C4C4"
+                                app:trackColor="#F8F8F8"
                                 android:id="@+id/main_unit_sub_prog_3"/>
 
                         </RelativeLayout>
@@ -265,7 +265,7 @@
                                 android:scaleX="1.5"
                                 android:progress="80"
                                 app:indicatorColor="#4ABD80"
-                                app:trackColor="#C4C4C4"
+                                app:trackColor="#F8F8F8"
                                 android:id="@+id/main_unit_sub_prog_4"/>
 
                         </RelativeLayout>
@@ -313,7 +313,7 @@
                                 android:scaleX="1.5"
                                 android:progress="80"
                                 app:indicatorColor="#4ABD80"
-                                app:trackColor="#C4C4C4"
+                                app:trackColor="#F8F8F8"
                                 android:id="@+id/main_unit_sub_prog_5"/>
 
                         </RelativeLayout>
@@ -360,7 +360,7 @@
                                 android:scaleX="1.5"
                                 android:progress="80"
                                 app:indicatorColor="#4ABD80"
-                                app:trackColor="#C4C4C4"
+                                app:trackColor="#F8F8F8"
                                 android:id="@+id/main_unit_sub_prog_6"/>
 
                         </RelativeLayout>
@@ -408,7 +408,7 @@
                                 android:scaleX="1.5"
                                 android:progress="80"
                                 app:indicatorColor="#4ABD80"
-                                app:trackColor="#C4C4C4"
+                                app:trackColor="#F8F8F8"
                                 android:id="@+id/main_unit_sub_prog_7"/>
 
                         </RelativeLayout>
