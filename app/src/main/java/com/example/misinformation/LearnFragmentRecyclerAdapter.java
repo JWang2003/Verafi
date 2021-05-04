@@ -1,6 +1,7 @@
 package com.example.misinformation;
 
 import android.content.Context;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +15,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.progressindicator.CircularProgressIndicator;
+
 import org.json.JSONException;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class LearnFragmentRecyclerAdapter extends RecyclerView.Adapter<LearnFragmentRecyclerAdapter.LearnFragmentViewHolder> {
@@ -24,6 +28,7 @@ public class LearnFragmentRecyclerAdapter extends RecyclerView.Adapter<LearnFrag
     private OnItemClickListener mListener;
     Context context;
     DatabaseAccess databaseAccess;
+    DataAccess dataAccess;
 
     public interface OnItemClickListener {
         void onItemClick(int position);
@@ -40,6 +45,7 @@ public class LearnFragmentRecyclerAdapter extends RecyclerView.Adapter<LearnFrag
         public ArrayList<LinearLayout> mLinearLayoutArray = new ArrayList<>();
         public ArrayList<TextView> mTextViewArray = new ArrayList<>();
         public ArrayList<ImageView> mImageViewArray = new ArrayList<>();
+        public ArrayList<CircularProgressIndicator> mProgBarArray = new ArrayList<>();
 
         public LearnFragmentViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
@@ -69,6 +75,14 @@ public class LearnFragmentRecyclerAdapter extends RecyclerView.Adapter<LearnFrag
             mTextViewArray.add(itemView.findViewById(R.id.main_unit_sub_title_5));
             mTextViewArray.add(itemView.findViewById(R.id.main_unit_sub_title_6));
             mTextViewArray.add(itemView.findViewById(R.id.main_unit_sub_title_7));
+            mProgBarArray.add(itemView.findViewById(R.id.main_unit_sub_prog_0));
+            mProgBarArray.add(itemView.findViewById(R.id.main_unit_sub_prog_1));
+            mProgBarArray.add(itemView.findViewById(R.id.main_unit_sub_prog_2));
+            mProgBarArray.add(itemView.findViewById(R.id.main_unit_sub_prog_3));
+            mProgBarArray.add(itemView.findViewById(R.id.main_unit_sub_prog_4));
+            mProgBarArray.add(itemView.findViewById(R.id.main_unit_sub_prog_5));
+            mProgBarArray.add(itemView.findViewById(R.id.main_unit_sub_prog_6));
+            mProgBarArray.add(itemView.findViewById(R.id.main_unit_sub_prog_7));
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -112,18 +126,37 @@ public class LearnFragmentRecyclerAdapter extends RecyclerView.Adapter<LearnFrag
     @Override
     public void onBindViewHolder(@NonNull LearnFragmentViewHolder holder, int position) {
         databaseAccess = DatabaseAccess.getInstance(context.getApplicationContext());
+        dataAccess = new DataAccess(context);
         Unit currentUnit = mUnitList.get(position);
         holder.setIsRecyclable(false);
         holder.mUnitName.setText(currentUnit.name);
+        holder.setIsRecyclable(false);
 
         //TODO: DYNAMICALLY SHOWING SECTIONS
         for (int i = 0; i < currentUnit.lessons.length(); i++) {
+
+            ArrayList<String> sectionNames = new ArrayList<>();
+            int progress = 0;
+            int total;
+
             holder.mLinearLayoutArray.get(i).setVisibility(View.VISIBLE);
+
             try {
                 holder.mTextViewArray.get(i).setText(currentUnit.lessons.getJSONObject(i).getString("lesson"));
+                progress = databaseAccess.getProgress(currentUnit.lessons.getJSONObject(i).getString("id"));
+                sectionNames = dataAccess.getSectionNames(currentUnit.lessons.getJSONObject(i).getString("id"));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
+            total = sectionNames.size();
+            if (total == 0) {
+                progress = 0;
+            } else {
+                progress = (progress * 100) / total;
+            }
+
+            holder.mProgBarArray.get(i).setProgress(progress);
         }
     }
 
