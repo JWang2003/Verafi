@@ -1,6 +1,7 @@
 package com.example.misinformation;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.w3c.dom.Text;
@@ -37,9 +39,11 @@ public class UnitPageRecyclerAdapter extends RecyclerView.Adapter<UnitPageRecycl
         public ArrayList<LinearLayout> mLinearLayoutArray = new ArrayList<>();
         public ArrayList<TextView> mTextViewArray = new ArrayList<>();
         public ArrayList<ImageView> mImageViewArray = new ArrayList<>();
+        public CardView card;
 
         public UnitPageViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
+            card = itemView.findViewById(R.id.unit_lesson_card);
             mLessonName = itemView.findViewById(R.id.unit_lesson_name);
             mProgressBar = itemView.findViewById(R.id.unit_progress_bar);
             mLinearLayoutArray.add(itemView.findViewById(R.id.unit_sub_linear_0));
@@ -99,6 +103,11 @@ public class UnitPageRecyclerAdapter extends RecyclerView.Adapter<UnitPageRecycl
         Lesson currentLesson = mLessonList.get(position);
         holder.setIsRecyclable(false);
         holder.mLessonName.setText(currentLesson.name);
+
+        // Make card grey if not available
+        if (currentLesson.lessonProgress == -1) {
+//            holder.card.setCardBackgroundColor(Color.parseColor("#C4C4C4"));
+        }
 
         int progress = databaseAccess.getProgress(currentLesson.id);
         int percentage = 0;

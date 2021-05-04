@@ -58,7 +58,7 @@ public class UnitPage extends AppCompatActivity {
             for (int i = 0; i < lessons.length(); i++) {
                 String id = lessons.getJSONObject(i).getString("id");
                 String name = lessons.getJSONObject(i).getString("lesson");
-                int progress = 0;
+                int progress = lessons.getJSONObject(i).getInt("progress");
                 ArrayList<String> secNames = dataAccess.getSectionNames(id);
                 ArrayList<Integer> secProgress = new ArrayList<Integer>();
                 theLessons.add(new Lesson(id, progress, name, secNames, secProgress));
@@ -89,8 +89,11 @@ public class UnitPage extends AppCompatActivity {
         mAdapter.setOnItemClickListener(new UnitPageRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                openLesson(position);
-                System.out.println("Lesson clicked at " + position);
+                if (mLessonList.get(position).lessonProgress != - 1) {
+                    openLesson(position);
+                } else {
+                    Toast.makeText(UnitPage.this, "Sorry, this lesson is not available currently", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

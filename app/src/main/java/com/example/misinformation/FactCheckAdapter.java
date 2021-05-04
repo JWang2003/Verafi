@@ -117,5 +117,5 @@ public class FactCheckAdapter extends RecyclerView.Adapter<FactCheckAdapter.Fact
     public int getItemCount() {
         return claimsList.size();
     }
-    
+
 }

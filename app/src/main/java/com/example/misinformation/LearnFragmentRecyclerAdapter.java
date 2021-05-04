@@ -1,9 +1,11 @@
 package com.example.misinformation;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -12,6 +14,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.json.JSONException;
@@ -40,10 +43,13 @@ public class LearnFragmentRecyclerAdapter extends RecyclerView.Adapter<LearnFrag
         public ArrayList<LinearLayout> mLinearLayoutArray = new ArrayList<>();
         public ArrayList<TextView> mTextViewArray = new ArrayList<>();
         public ArrayList<ImageView> mImageViewArray = new ArrayList<>();
+        public CardView unitCard;
+
 
         public LearnFragmentViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
             mUnitName = itemView.findViewById(R.id.unit_name);
+            unitCard = itemView.findViewById(R.id.unit_card);
             mScrollViewLinearLayout = itemView.findViewById(R.id.scrollview_layout);
             mLinearLayoutArray.add(itemView.findViewById(R.id.main_unit_sub_linear_0));
             mLinearLayoutArray.add(itemView.findViewById(R.id.main_unit_sub_linear_1));
@@ -124,6 +130,10 @@ public class LearnFragmentRecyclerAdapter extends RecyclerView.Adapter<LearnFrag
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+        }
+        // Make card grey to show it can't be clicked
+        if (currentUnit.progress == -1) {
+//            holder.unitCard.setCardBackgroundColor(Color.parseColor("#C4C4C4"));
         }
     }
 
