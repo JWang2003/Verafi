@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/frameLayout"
+            android:id="@+id/quiz_page_top_bar"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:orientation="horizontal"
@@ -22,92 +22,123 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageButton
-                android:id="@+id/quiz_top_icon_0"
-                android:layout_width="0dp"
+                android:layout_width="50dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:backgroundTint="#00000000"
-                android:scaleType="fitCenter"
                 android:src="@drawable/abc_vector_test"
-                android:visibility="visible"
-                app:tint="#C4C4C4" />
+                android:backgroundTint="#00000000"
+                android:tint="#000000"
+                android:id="@+id/quiz_page_back" />
 
-            <ImageButton
-                android:id="@+id/quiz_top_icon_1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:backgroundTint="#00000000"
-                android:scaleType="fitCenter"
-                android:src="@drawable/abc_vector_test"
-                android:visibility="visible"
-                app:tint="#C4C4C4" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <ImageButton
-                android:id="@+id/quiz_top_icon_2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:backgroundTint="#00000000"
-                android:scaleType="fitCenter"
-                android:src="@drawable/abc_vector_test"
-                android:visibility="visible"
-                app:tint="#C4C4C4" />
+                <ProgressBar
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:progress="0"
+                    android:progressTint="#4ABD80"
+                    android:id="@+id/quiz_prog_bar"
+                    android:progressBackgroundTint="#C4C4C4"
+                    android:layout_centerInParent="true"/>
 
-            <ImageButton
-                android:id="@+id/quiz_top_icon_3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:backgroundTint="#00000000"
-                android:scaleType="fitCenter"
-                android:src="@drawable/abc_vector_test"
-                android:visibility="visible"
-                app:tint="#C4C4C4" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/quiz_top_icon_4"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:backgroundTint="#00000000"
-                android:scaleType="fitCenter"
-                android:src="@drawable/abc_vector_test"
-                android:visibility="gone"
-                app:tint="#C4C4C4" />
+                    <ImageButton
+                        android:id="@+id/quiz_top_icon_0"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="#00000000"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/quiz_pic"
+                        android:visibility="visible"
+                        app:tint="#C4C4C4" />
 
-            <ImageButton
-                android:id="@+id/quiz_top_icon_5"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:backgroundTint="#00000000"
-                android:scaleType="fitCenter"
-                android:src="@drawable/abc_vector_test"
-                android:visibility="gone"
-                app:tint="#C4C4C4" />
+                    <ImageButton
+                        android:id="@+id/quiz_top_icon_1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="#00000000"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/quiz_pic"
+                        android:visibility="visible"
+                        app:tint="#C4C4C4" />
 
-            <ImageButton
-                android:id="@+id/quiz_top_icon_6"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:backgroundTint="#00000000"
-                android:scaleType="fitCenter"
-                android:src="@drawable/abc_vector_test"
-                android:visibility="gone"
-                app:tint="#C4C4C4" />
+                    <ImageButton
+                        android:id="@+id/quiz_top_icon_2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="#00000000"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/quiz_pic"
+                        android:visibility="visible"
+                        app:tint="#C4C4C4" />
 
-            <ImageButton
-                android:id="@+id/quiz_top_icon_7"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:backgroundTint="#00000000"
-                android:scaleType="fitCenter"
-                android:src="@drawable/abc_vector_test"
-                android:visibility="gone"
-                app:tint="#C4C4C4" />
+                    <ImageButton
+                        android:id="@+id/quiz_top_icon_3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="#00000000"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/quiz_pic"
+                        android:visibility="visible"
+                        app:tint="#C4C4C4" />
+
+                    <ImageButton
+                        android:id="@+id/quiz_top_icon_4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="#00000000"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/quiz_pic"
+                        android:visibility="gone"
+                        app:tint="#C4C4C4" />
+
+                    <ImageButton
+                        android:id="@+id/quiz_top_icon_5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="#00000000"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/quiz_pic"
+                        android:visibility="gone"
+                        app:tint="#C4C4C4" />
+
+                    <ImageButton
+                        android:id="@+id/quiz_top_icon_6"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="#00000000"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/quiz_pic"
+                        android:visibility="gone"
+                        app:tint="#C4C4C4" />
+
+                    <ImageButton
+                        android:id="@+id/quiz_top_icon_7"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="#00000000"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/quiz_pic"
+                        android:visibility="gone"
+                        app:tint="#C4C4C4" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
 
         </LinearLayout>
 
@@ -124,7 +155,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/quiz_page_top_bar" />
 
         <TextView
             android:id="@+id/lesson_name"

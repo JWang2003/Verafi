@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private PagerAdapter pagerAdapter;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         AndroidNetworking.initialize(getApplicationContext());
@@ -58,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
             MainPagePagerAdapter adapter = new MainPagePagerAdapter(getSupportFragmentManager());
             viewPager.setAdapter(adapter);
         }
+
+
 
 
         dataAccess = new DataAccess(MainActivity.this);
@@ -112,12 +117,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void onClickSetup() {
 
+
+
         factCheckPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 viewPager.setCurrentItem(1, true);
-                radioGroup.check(R.id.go_factCheck);
-
             }
         });
 
@@ -130,19 +135,22 @@ public class MainActivity extends AppCompatActivity {
         });
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 //changing stuff depending on scroll
-                switch (position) {
-                    case 1:
-                        radioGroup.check(R.id.go_factCheck);
-                        topText.setText("Fact Check");
-                        break;
-                    case 2:
-                        radioGroup.check(R.id.Learn);
-                        topText.setText("Learn");
-                        break;
+                System.out.println(position);
 
+                if (position == 0){
+                    radioGroup.check(R.id.Learn);
+                    topText.setText("Learn");
+                    System.out.println("Learn fragment");
+                }
+                else {
+                    radioGroup.check(R.id.go_factCheck);
+                    topText.setText("Fact Check");
+                    System.out.println("Fact check fragment");
                 }
             }
 

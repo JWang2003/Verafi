@@ -55,12 +55,30 @@
                         android:layout_marginRight="20dp"
                         android:id="@+id/main_unit_sub_linear_0">
 
-                        <ImageView
+                        <RelativeLayout
                             android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:src="@drawable/lesson_circle"
-                            android:layout_gravity="center_horizontal"
-                            android:id="@+id/main_unit_sub_circle_0"/>
+                            android:layout_height="90dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:src="@drawable/lesson_circle"
+                                android:layout_centerInParent="true"
+                                android:id="@+id/main_unit_sub_circle_0"/>
+
+                            <com.google.android.material.progressindicator.CircularProgressIndicator
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                app:trackThickness="5dp"
+                                android:scaleY="1.5"
+                                android:scaleX="1.5"
+                                android:progress="80"
+                                app:indicatorColor="#4ABD80"
+                                app:trackColor="#F8F8F8"
+                                android:id="@+id/main_unit_sub_prog_0"/>
+
+                        </RelativeLayout>
 
                         <TextView
                             android:id="@+id/main_unit_sub_title_0"
@@ -83,13 +101,31 @@
                         android:layout_marginRight="20dp"
                         android:id="@+id/main_unit_sub_linear_1">
 
-                        <ImageView
+                        <RelativeLayout
                             android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/lesson_circle"
-                            android:id="@+id/main_unit_sub_circle_1"
-                            app:tint="#CFA1A1" />
+                            android:layout_height="90dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:src="@drawable/lesson_circle"
+                                android:layout_centerInParent="true"
+                                android:id="@+id/main_unit_sub_circle_1"
+                                app:tint="#CFA1A1" />
+
+                            <com.google.android.material.progressindicator.CircularProgressIndicator
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                app:trackThickness="5dp"
+                                android:scaleY="1.5"
+                                android:scaleX="1.5"
+                                android:progress="80"
+                                app:indicatorColor="#4ABD80"
+                                app:trackColor="#F8F8F8"
+                                android:id="@+id/main_unit_sub_prog_1"/>
+
+                        </RelativeLayout>
 
                         <TextView
                             android:layout_width="match_parent"
@@ -113,13 +149,31 @@
                         android:layout_marginRight="20dp"
                         android:id="@+id/main_unit_sub_linear_2">
 
-                        <ImageView
+                        <RelativeLayout
                             android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/lesson_circle"
-                            android:id="@+id/main_unit_sub_circle_2"
-                            app:tint="#98CBDB" />
+                            android:layout_height="90dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:src="@drawable/lesson_circle"
+                                android:layout_centerInParent="true"
+                                app:tint="#98CBDB"
+                                android:id="@+id/main_unit_sub_circle_2"/>
+
+                            <com.google.android.material.progressindicator.CircularProgressIndicator
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                app:trackThickness="5dp"
+                                android:scaleY="1.5"
+                                android:scaleX="1.5"
+                                android:progress="80"
+                                app:indicatorColor="#4ABD80"
+                                app:trackColor="#F8F8F8"
+                                android:id="@+id/main_unit_sub_prog_2"/>
+
+                        </RelativeLayout>
 
                         <TextView
                             android:layout_width="match_parent"
@@ -143,12 +197,30 @@
                         android:layout_marginRight="20dp"
                         android:id="@+id/main_unit_sub_linear_3">
 
-                        <ImageView
+                        <RelativeLayout
                             android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/lesson_circle"
-                            android:id="@+id/main_unit_sub_circle_3"/>
+                            android:layout_height="90dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:src="@drawable/lesson_circle"
+                                android:layout_centerInParent="true"
+                                android:id="@+id/main_unit_sub_circle_3"/>
+
+                            <com.google.android.material.progressindicator.CircularProgressIndicator
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                app:trackThickness="5dp"
+                                android:scaleY="1.5"
+                                android:scaleX="1.5"
+                                android:progress="80"
+                                app:indicatorColor="#4ABD80"
+                                app:trackColor="#F8F8F8"
+                                android:id="@+id/main_unit_sub_prog_3"/>
+
+                        </RelativeLayout>
 
                         <TextView
                             android:layout_width="match_parent"
@@ -172,13 +244,31 @@
                         android:layout_marginRight="20dp"
                         android:id="@+id/main_unit_sub_linear_4">
 
-                        <ImageView
-                            android:id="@+id/main_unit_sub_circle_4"
+                        <RelativeLayout
                             android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/lesson_circle"
-                            app:tint="#CFA1A1" />
+                            android:layout_height="90dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:src="@drawable/lesson_circle"
+                                android:layout_centerInParent="true"
+                                app:tint="#CFA1A1"
+                                android:id="@+id/main_unit_sub_circle_4"/>
+
+                            <com.google.android.material.progressindicator.CircularProgressIndicator
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                app:trackThickness="5dp"
+                                android:scaleY="1.5"
+                                android:scaleX="1.5"
+                                android:progress="80"
+                                app:indicatorColor="#4ABD80"
+                                app:trackColor="#F8F8F8"
+                                android:id="@+id/main_unit_sub_prog_4"/>
+
+                        </RelativeLayout>
 
                         <TextView
                             android:layout_width="match_parent"
@@ -202,13 +292,31 @@
                         android:layout_marginRight="20dp"
                         android:id="@+id/main_unit_sub_linear_5">
 
-                        <ImageView
+                        <RelativeLayout
                             android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/lesson_circle"
-                            android:id="@+id/main_unit_sub_circle_5"
-                            app:tint="#98CBDB" />
+                            android:layout_height="90dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:src="@drawable/lesson_circle"
+                                android:layout_centerInParent="true"
+                                app:tint="#98CBDB"
+                                android:id="@+id/main_unit_sub_circle_5"/>
+
+                            <com.google.android.material.progressindicator.CircularProgressIndicator
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                app:trackThickness="5dp"
+                                android:scaleY="1.5"
+                                android:scaleX="1.5"
+                                android:progress="80"
+                                app:indicatorColor="#4ABD80"
+                                app:trackColor="#F8F8F8"
+                                android:id="@+id/main_unit_sub_prog_5"/>
+
+                        </RelativeLayout>
 
                         <TextView
                             android:id="@+id/main_unit_sub_title_5"
@@ -232,12 +340,30 @@
                         android:layout_marginRight="20dp"
                         android:id="@+id/main_unit_sub_linear_6">
 
-                        <ImageView
+                        <RelativeLayout
                             android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/lesson_circle"
-                            android:id="@+id/main_unit_sub_circle_6"/>
+                            android:layout_height="90dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:src="@drawable/lesson_circle"
+                                android:layout_centerInParent="true"
+                                android:id="@+id/main_unit_sub_circle_6"/>
+
+                            <com.google.android.material.progressindicator.CircularProgressIndicator
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                app:trackThickness="5dp"
+                                android:scaleY="1.5"
+                                android:scaleX="1.5"
+                                android:progress="80"
+                                app:indicatorColor="#4ABD80"
+                                app:trackColor="#F8F8F8"
+                                android:id="@+id/main_unit_sub_prog_6"/>
+
+                        </RelativeLayout>
 
                         <TextView
                             android:layout_width="match_parent"
@@ -261,13 +387,31 @@
                         android:layout_marginRight="20dp"
                         android:id="@+id/main_unit_sub_linear_7">
 
-                        <ImageView
+                        <RelativeLayout
                             android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/lesson_circle"
-                            android:id="@+id/main_unit_sub_circle_7"
-                            app:tint="#CFA1A1"/>
+                            android:layout_height="90dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:src="@drawable/lesson_circle"
+                                android:layout_centerInParent="true"
+                                app:tint="#CFA1A1"
+                                android:id="@+id/main_unit_sub_circle_7"/>
+
+                            <com.google.android.material.progressindicator.CircularProgressIndicator
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                app:trackThickness="5dp"
+                                android:scaleY="1.5"
+                                android:scaleX="1.5"
+                                android:progress="80"
+                                app:indicatorColor="#4ABD80"
+                                app:trackColor="#F8F8F8"
+                                android:id="@+id/main_unit_sub_prog_7"/>
+
+                        </RelativeLayout>
 
                         <TextView
                             android:layout_width="match_parent"
