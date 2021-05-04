@@ -45,6 +45,14 @@ public class UnitPage extends AppCompatActivity {
         connectXML();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(UnitPage.this, MainActivity.class);
+        startActivity(intent);
+        finishAffinity();
+    }
+
     private ArrayList<Lesson> getLessonsArray() {
         ArrayList<Lesson> theLessons = new ArrayList<Lesson>();
         try {
