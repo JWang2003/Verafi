@@ -1,7 +1,11 @@
 package com.example.misinformation;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.widget.Toast;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
@@ -149,11 +153,12 @@ public class FactCheckAPI {
                                 System.out.println(new Claim(title, claimant, claimDate, source, reviewDate, claimRating, publisherName, publisherSite, url));
                                 claimsList.add(new Claim(title, claimant, claimDate, source, reviewDate, claimRating, publisherName, publisherSite, url));
                                 callback.didReceivedNewSearchResult(claimsList);
-                        }
+                            }
                             if (nextPage) {
                                 consecutiveSearch();
                                 return;
                             }
+                            callback();
                         } catch (JSONException e) {
                             System.out.println("Bad error has occurred");
                             e.printStackTrace();
@@ -172,5 +177,8 @@ public class FactCheckAPI {
                 });
     }
 
+    private void callback() {
+        FactCheckFragment.getInstance().recyclerViewSetup();
+    }
 }
 
