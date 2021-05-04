@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -63,13 +64,20 @@ public class LearnPageFragment extends Fragment {
         mAdapter.setOnItemClickListener(new LearnFragmentRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                openUnit(position);
-                System.out.println("Unit clicked at " + position);
+                // Open if available
+                if (mUnitList.get(position).progress != -1) {
+                    openUnit(position);
+                } else {
+                    Toast.makeText(getActivity().getApplicationContext(), "Sorry, this topic is not available currently", Toast.LENGTH_SHORT).show();
+                }
             }
             @Override
             public void onScrollViewClick(int position) {
-                openUnit(position);
-                System.out.println("Unit clicked thru scrollview at " + position);
+                if (mUnitList.get(position).progress != -1) {
+                    openUnit(position);
+                } else {
+                    Toast.makeText(getActivity().getApplicationContext(), "Sorry, this topic is not available currently", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
