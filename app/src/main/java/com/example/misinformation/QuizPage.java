@@ -73,6 +73,15 @@ public class QuizPage extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(QuizPage.this, UnitPage.class);
+        intent.putExtra("unit", unit);
+        intent.putExtra("jsonArray", jsonArray);
+        startActivity(intent);
+    }
+
     private void processIntents() {
         Intent intent = getIntent();
         currentLessonID = intent.getStringExtra("lessonID");
