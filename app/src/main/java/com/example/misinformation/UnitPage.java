@@ -47,8 +47,8 @@ public class UnitPage extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         Intent intent = new Intent(UnitPage.this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+        finishAffinity();
     }
 
     private ArrayList<Lesson> getLessonsArray() {

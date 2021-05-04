@@ -125,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 viewPager.setCurrentItem(0, true);
+                radioGroup.check(R.id.Learn);
             }
         });
 
@@ -137,10 +138,11 @@ public class MainActivity extends AppCompatActivity {
                         radioGroup.check(R.id.go_factCheck);
                         topText.setText("Fact Check");
                         break;
-                    default:
+                    case 2:
                         radioGroup.check(R.id.Learn);
                         topText.setText("Learn");
                         break;
+
                 }
             }
 

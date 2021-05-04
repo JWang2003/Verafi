@@ -92,6 +92,14 @@ public class FactCheckFragment extends Fragment {
         factCheckRecyclerView.setAdapter(factCheckAdapter);
         factCheckAdapter.notifyDataSetChanged();
         factCheckRecyclerView.setHasFixedSize(false);
+        factCheckAdapter.setOnItemClickListener(new FactCheckAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Intent intent = new Intent(getActivity().getApplicationContext(), WebPage.class);
+                intent.putExtra("url", factCheckAPI.claimsList.get(position).url);
+                startActivity(intent);
+            }
+        });
 
     }
 
