@@ -154,10 +154,10 @@ public class FactCheckAPI {
                                 claimsList.add(new Claim(title, claimant, claimDate, source, reviewDate, claimRating, publisherName, publisherSite, url));
                                 callback.didReceivedNewSearchResult(claimsList);
                             }
-                            if (nextPage) {
-                                consecutiveSearch();
-                                return;
-                            }
+//                            if (nextPage) {
+//                                consecutiveSearch();
+//                                return;
+//                            }
                             callback();
                         } catch (JSONException e) {
                             System.out.println("Bad error has occurred");
