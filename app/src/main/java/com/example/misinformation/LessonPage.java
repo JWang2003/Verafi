@@ -32,7 +32,6 @@ public class LessonPage extends AppCompatActivity {
     TextView s_text;
     Button continue_button;
     ImageButton back_button;
-    ProgressBar prog_bar;
 
     String currentLessonID;
     int currentSectionIndex;
@@ -219,10 +218,6 @@ public class LessonPage extends AppCompatActivity {
         mImageButtonArray.add(findViewById(R.id.lesson_top_icon_5));
         mImageButtonArray.add(findViewById(R.id.lesson_top_icon_6));
         mImageButtonArray.add(findViewById(R.id.lesson_top_icon_7));
-        prog_bar = findViewById(R.id.lesson_prog_bar);
-
-        prog_bar.setMax(allSections.size());
-        prog_bar.setProgress(totalProgress);
 
         for (int i = 0; i < allSections.size(); i++) {
             mImageButtonArray.get(i).setVisibility(View.VISIBLE);

@@ -12,39 +12,45 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:id="@+id/lesson_page_top_bar"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:padding="25dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/abc_vector_test"
-            android:backgroundTint="#00000000"
-            android:tint="#000000"
-            android:id="@+id/lesson_page_back" />
-
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lesson_page_top_bar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical">
 
-            <ProgressBar
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                style="@android:style/Widget.ProgressBar.Horizontal"
-                android:progressTint="#4ABD80"
-                android:id="@+id/lesson_prog_bar"
-                android:progressBackgroundTint="#C4C4C4"
-                android:layout_centerInParent="true"/>
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/abc_vector_test"
+                android:backgroundTint="#00000000"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:tint="#000000"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:id="@+id/lesson_page_back" />
+
+            <TextView
+                android:id="@+id/section_type"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:fontFamily="@font/avenir_regular"
+                android:text="Lesson"
+                android:textColor="@color/grey_text"
+                android:textSize="28sp"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/lesson_page_back"
+>
 
                 <ImageButton
                     android:layout_width="0dp"
@@ -136,142 +142,122 @@
 
             </LinearLayout>
 
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/lesson_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/avenir_bold"
+                android:text="%LessonName%"
+                android:textColor="@color/black"
+                android:textSize="36sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_page_top_bar" />
 
-    <TextView
-        android:id="@+id/section_type"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        android:fontFamily="@font/avenir_regular"
-        android:text="Lesson"
-        android:textColor="@color/grey_text"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lesson_page_top_bar" />
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:fontFamily="@font/avenir_regular"
+                android:lineSpacingExtra="10sp"
+                android:text="%LessonContent%"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name" />
 
+        <!-- Change visibility to Gone -->
         <TextView
-            android:id="@+id/lesson_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="35dp"
-            android:fontFamily="@font/avenir_bold"
-            android:lineSpacingExtra="10sp"
-            android:text="%LessonName%"
-            android:textColor="@color/black"
-            android:textSize="36sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/section_type" />
-
-        <TextView
-            android:id="@+id/text"
+            android:id="@+id/website"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="35dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:layout_marginRight="35dp"
             android:fontFamily="@font/avenir_regular"
-            android:lineSpacingExtra="10sp"
-            android:text="%LessonContent%"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lesson_name" />
-
-    <!-- Change visibility to Gone -->
-    <TextView
-        android:id="@+id/website"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="35dp"
-        android:fontFamily="@font/avenir_regular"
-        android:text="%Website%"
-        android:textColor="@color/link_blue"
-        android:textSize="20sp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text" />
-
-    <!-- Change visibility to Gone -->
-    <TextView
-        android:id="@+id/s_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="35dp"
-        android:fontFamily="@font/avenir_bold"
-        android:text="Sources:"
-        android:textColor="@color/grey_text"
-        android:textSize="10sp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/website" />
-
-        <TextView
-            android:id="@+id/sources"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginRight="35dp"
-            android:fontFamily="@font/avenir_regular"
-            android:lineSpacingExtra="4sp"
-            android:text="Sources"
-            android:textColor="@color/grey_text"
-            android:textSize="12sp"
+            android:text="%Website%"
+            android:textColor="@color/link_blue"
+            android:textSize="20sp"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/s_text" />
+            app:layout_constraintTop_toBottomOf="@+id/text" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/continue_card"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:layout_marginLeft="35dp"
-            app:cardCornerRadius="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sources">
-
-            <Button
-                android:id="@+id/continue_button"
-                android:layout_width="335dp"
-                android:layout_height="60dp"
-                android:background="#FFFFFF"
-                android:fontFamily="@font/avenir_bold"
-                android:gravity="center"
-                android:text="Continue"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:backgroundTint="#4ABD80"
-                app:iconTint="#00FFFFFF" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <!-- Change visibility to Gone -->
+        <TextView
+            android:id="@+id/s_text"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/avenir_bold"
+            android:text="Sources:"
+            android:textColor="@color/grey_text"
+            android:textSize="10sp"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/continue_card">
+            app:layout_constraintTop_toBottomOf="@+id/website" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/sources"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/avenir_regular"
+                android:lineSpacingExtra="4sp"
+                android:text="Sources"
+                android:textColor="@color/grey_text"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/s_text" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/continue_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sources">
+
+                <Button
+                    android:id="@+id/continue_button"
+                    android:layout_width="335dp"
+                    android:layout_height="60dp"
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/avenir_bold"
+                    android:gravity="center"
+                    android:text="Continue"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#4ABD80"
+                    app:iconTint="#00FFFFFF" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/continue_card">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>

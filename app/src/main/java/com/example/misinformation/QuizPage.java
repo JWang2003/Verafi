@@ -27,7 +27,6 @@ public class QuizPage extends AppCompatActivity {
     TextView description;
     Button continue_button;
     ImageButton back_button;
-    ProgressBar prog_bar;
 
     DataAccess dataAccess;
     DatabaseAccess db;
@@ -174,6 +173,7 @@ public class QuizPage extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     int buttonIndex = buttonChoices.indexOf(v);
+                    buttonChoices.get(buttonIndex).setTextColor(QuizPage.this.getResources().getColorStateList(R.color.white));
                     if (options.get(buttonIndex).isCorrect) {
                         buttonChoices.get(buttonIndex).setBackgroundTintList(QuizPage.this.getResources().getColorStateList(R.color.blue));
                         Toast.makeText(QuizPage.this, "Correct!", Toast.LENGTH_SHORT).show();
@@ -280,10 +280,6 @@ public class QuizPage extends AppCompatActivity {
         mImageButtonArray.add(findViewById(R.id.quiz_top_icon_5));
         mImageButtonArray.add(findViewById(R.id.quiz_top_icon_6));
         mImageButtonArray.add(findViewById(R.id.quiz_top_icon_7));
-        prog_bar = findViewById(R.id.quiz_prog_bar);
-
-        prog_bar.setMax(allSections.size());
-        prog_bar.setProgress(totalProgress);
 
         for (int i = 0; i < allSections.size(); i++) {
             mImageButtonArray.get(i).setVisibility(View.VISIBLE);
