@@ -114,8 +114,8 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="43dp"
-                android:layout_marginLeft="43dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/avenir_regular"
                 android:text="View article"
@@ -123,17 +123,6 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginBottom="13dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:srcCompat="@drawable/ic_vector__1_" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
