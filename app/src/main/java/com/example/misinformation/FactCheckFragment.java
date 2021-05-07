@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -21,6 +22,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -31,15 +33,18 @@ public class FactCheckFragment extends Fragment {
     //Properties
     FactCheckAPI factCheckAPI;
     FactCheckAdapter factCheckAdapter;
-
+    private static FactCheckFragment instance; //The static has to stay for the whole thing to work
+    boolean lock = false;
+    String prevClaimString = "";
+    String claimString = "";
 
     //XML Views
     RecyclerView factCheckRecyclerView;
     EditText claimSearch;
     ImageButton searchButton;
-    String passedClaim;
+    ProgressBar progressBar;
 
-    // TODO: Fix bug where you have to click on editText to open
+    // TODO: Add loading circle
     public FactCheckFragment() {
         // Required empty public constructor
     }
@@ -50,6 +55,7 @@ public class FactCheckFragment extends Fragment {
         // Inflate the layout for this fragment
         ViewGroup rootView = (ViewGroup) inflater.inflate(
                 R.layout.fragment_fact_check, container, false);
+        instance = this;
 
         return rootView;
     }
@@ -60,8 +66,13 @@ public class FactCheckFragment extends Fragment {
 
         connectXML();
         onClickSetup();
-        startSearch();
+        recyclerViewInit();
+//        System.out.println("going to start search");
+//        startSearch();
+    }
 
+    public static FactCheckFragment getInstance() {
+        return instance;
     }
 
     // Handle
@@ -72,23 +83,32 @@ public class FactCheckFragment extends Fragment {
     }
 
     private void startSearch() {
+        System.out.println("Start search");
         searchClaim();
-        recyclerViewSetup();
     }
-
 
     private synchronized void searchClaim() {
+        prevClaimString = claimString;
+        claimString = claimSearch.getText().toString();
+        if (claimString.equals(prevClaimString)) {
+            return;
+        }
+        factCheckRecyclerView.setVisibility(View.GONE);
+        progressBar.setVisibility(View.VISIBLE);
+        progressBar.invalidate();
         System.out.println("new factcheck obj created");
         // What user searched
-        factCheckAPI = new FactCheckAPI(claimSearch.getText().toString(), this, getActivity().getApplicationContext());
+        factCheckAPI = new FactCheckAPI(claimString, this, getActivity().getApplicationContext());
     }
 
-
-    private synchronized void recyclerViewSetup() {
+    private synchronized void recyclerViewInit() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext(), RecyclerView.VERTICAL, false);
         factCheckRecyclerView = getView().findViewById(R.id.claims_recycle);
         factCheckRecyclerView.setLayoutManager(linearLayoutManager);
+    }
 
+
+    public synchronized void recyclerViewSetup() {
         System.out.println(factCheckAPI.claimsList.size());
         factCheckAdapter = new FactCheckAdapter(getActivity().getApplicationContext(), factCheckAPI.claimsList);
         factCheckRecyclerView.setAdapter(factCheckAdapter);
@@ -102,12 +122,16 @@ public class FactCheckFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
+        factCheckRecyclerView.setVisibility(View.VISIBLE);
+        System.out.println("view is gone");
+        progressBar.setVisibility(View.GONE);
     }
 
     private void connectXML() {
         claimSearch = getView().findViewById(R.id.claimInput);
         searchButton = (ImageButton)getView().findViewById(R.id.fce_searchButton);
+        progressBar = (ProgressBar) getView().findViewById(R.id.progress_bar);
+        progressBar.setVisibility(View.GONE);
     }
 
     private void onClickSetup() {
@@ -126,4 +150,5 @@ public class FactCheckFragment extends Fragment {
         InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
+
 }

@@ -1,7 +1,11 @@
 package com.example.misinformation;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.widget.Toast;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
@@ -91,7 +95,7 @@ public class FactCheckAPI {
                                 try {
                                     claimDate = currentClaim.getString("claimDate");
                                 } catch (Exception e) {
-                                    claimDate = "no claimDate";
+                                    claimDate = "Unknown";
                                 }
 //                                System.out.println("claimDate: " + claimDate);
 
@@ -111,7 +115,7 @@ public class FactCheckAPI {
                                 try {
                                     reviewDate = currentClaimReview.getString("reviewDate");
                                 } catch (Exception e) {
-                                    reviewDate = "no reviewDate";
+                                    reviewDate = "Unknown";
                                 }
 //                                System.out.println("reviewDate: " + reviewDate);
                                 try {
@@ -149,14 +153,16 @@ public class FactCheckAPI {
                                 System.out.println(new Claim(title, claimant, claimDate, source, reviewDate, claimRating, publisherName, publisherSite, url));
                                 claimsList.add(new Claim(title, claimant, claimDate, source, reviewDate, claimRating, publisherName, publisherSite, url));
                                 callback.didReceivedNewSearchResult(claimsList);
-                        }
-                            if (nextPage) {
-                                consecutiveSearch();
-                                return;
                             }
+//                            if (nextPage) {
+//                                consecutiveSearch();
+//                                return;
+//                            }
+                            callback();
                         } catch (JSONException e) {
                             System.out.println("Bad error has occurred");
                             e.printStackTrace();
+                            callback();
                         }
 
                         if (claimsList.size() == 0) {
@@ -172,5 +178,8 @@ public class FactCheckAPI {
                 });
     }
 
+    private void callback() {
+        FactCheckFragment.getInstance().recyclerViewSetup();
+    }
 }
 
