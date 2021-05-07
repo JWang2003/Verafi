@@ -47,7 +47,7 @@ public class LearnFragmentRecyclerAdapter extends RecyclerView.Adapter<LearnFrag
         public LinearLayout mScrollViewLinearLayout;
         public ArrayList<LinearLayout> mLinearLayoutArray = new ArrayList<>();
         public ArrayList<TextView> mTextViewArray = new ArrayList<>();
-        public ArrayList<ImageView> mImageViewArray = new ArrayList<>();
+        public ArrayList<TextView> mPercentageArray = new ArrayList<>();
         public CardView unitCard;
         public ArrayList<CircularProgressIndicator> mProgBarArray = new ArrayList<>();
 
@@ -64,14 +64,14 @@ public class LearnFragmentRecyclerAdapter extends RecyclerView.Adapter<LearnFrag
             mLinearLayoutArray.add(itemView.findViewById(R.id.main_unit_sub_linear_5));
             mLinearLayoutArray.add(itemView.findViewById(R.id.main_unit_sub_linear_6));
             mLinearLayoutArray.add(itemView.findViewById(R.id.main_unit_sub_linear_7));
-            mImageViewArray.add(itemView.findViewById(R.id.main_unit_sub_circle_0));
-            mImageViewArray.add(itemView.findViewById(R.id.main_unit_sub_circle_1));
-            mImageViewArray.add(itemView.findViewById(R.id.main_unit_sub_circle_2));
-            mImageViewArray.add(itemView.findViewById(R.id.main_unit_sub_circle_3));
-            mImageViewArray.add(itemView.findViewById(R.id.main_unit_sub_circle_4));
-            mImageViewArray.add(itemView.findViewById(R.id.main_unit_sub_circle_5));
-            mImageViewArray.add(itemView.findViewById(R.id.main_unit_sub_circle_6));
-            mImageViewArray.add(itemView.findViewById(R.id.main_unit_sub_circle_7));
+            mPercentageArray.add(itemView.findViewById(R.id.main_unit_sub_percent_0));
+            mPercentageArray.add(itemView.findViewById(R.id.main_unit_sub_percent_1));
+            mPercentageArray.add(itemView.findViewById(R.id.main_unit_sub_percent_2));
+            mPercentageArray.add(itemView.findViewById(R.id.main_unit_sub_percent_3));
+            mPercentageArray.add(itemView.findViewById(R.id.main_unit_sub_percent_4));
+            mPercentageArray.add(itemView.findViewById(R.id.main_unit_sub_percent_5));
+            mPercentageArray.add(itemView.findViewById(R.id.main_unit_sub_percent_6));
+            mPercentageArray.add(itemView.findViewById(R.id.main_unit_sub_percent_7));
             mTextViewArray.add(itemView.findViewById(R.id.main_unit_sub_title_0));
             mTextViewArray.add(itemView.findViewById(R.id.main_unit_sub_title_1));
             mTextViewArray.add(itemView.findViewById(R.id.main_unit_sub_title_2));
@@ -161,11 +161,12 @@ public class LearnFragmentRecyclerAdapter extends RecyclerView.Adapter<LearnFrag
             }
 
             holder.mProgBarArray.get(i).setProgress(progress);
+            holder.mPercentageArray.get(i).setText(progress + "%");
         }
         // Make card grey to show it can't be clicked
-        if (currentUnit.progress == -1) {
+//        if (currentUnit.progress == -1) {
 //            holder.unitCard.setCardBackgroundColor(Color.parseColor("#C4C4C4"));
-        }
+//        }
     }
 
     @Override

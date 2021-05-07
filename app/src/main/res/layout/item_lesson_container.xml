@@ -7,7 +7,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="#F8F8F8"
+        app:cardBackgroundColor="#FFFFFF"
         app:cardCornerRadius="20dp"
         app:cardElevation="10dp"
         android:id="@+id/unit_lesson_card"

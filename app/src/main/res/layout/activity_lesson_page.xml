@@ -142,6 +142,7 @@
             android:layout_marginRight="30dp"
             android:fontFamily="@font/avenir_bold"
             android:text="%LessonName%"
+            android:lineSpacingExtra="9sp"
             android:textColor="@color/black"
             android:textSize="36sp"
             app:layout_constraintEnd_toEndOf="parent"
