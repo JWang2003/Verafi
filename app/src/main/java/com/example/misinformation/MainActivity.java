@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
         dataAccess = new DataAccess(MainActivity.this);
         units = dataAccess.getUnits();
+        radioGroup.check(R.id.Learn);
         System.out.println(units);
     }
 
@@ -131,7 +132,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 viewPager.setCurrentItem(0, true);
-                radioGroup.check(R.id.Learn);
             }
         });
 
@@ -141,7 +141,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 //changing stuff depending on scroll
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
                 System.out.println(position);
+
 
                 if (position == 0){
                     radioGroup.check(R.id.Learn);
@@ -157,10 +164,6 @@ public class MainActivity extends AppCompatActivity {
                     factCheckPage.setTextColor(Color.parseColor("#FFFFFF"));
                     learnPage.setTextColor(Color.parseColor("#000000"));
                 }
-            }
-
-            @Override
-            public void onPageSelected(int position) {
 
             }
 
