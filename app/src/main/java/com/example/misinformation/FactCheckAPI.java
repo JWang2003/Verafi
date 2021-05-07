@@ -95,7 +95,7 @@ public class FactCheckAPI {
                                 try {
                                     claimDate = currentClaim.getString("claimDate");
                                 } catch (Exception e) {
-                                    claimDate = "no claimDate";
+                                    claimDate = "Unknown";
                                 }
 //                                System.out.println("claimDate: " + claimDate);
 
@@ -115,7 +115,7 @@ public class FactCheckAPI {
                                 try {
                                     reviewDate = currentClaimReview.getString("reviewDate");
                                 } catch (Exception e) {
-                                    reviewDate = "no reviewDate";
+                                    reviewDate = "Unknown";
                                 }
 //                                System.out.println("reviewDate: " + reviewDate);
                                 try {

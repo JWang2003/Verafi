@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -41,6 +42,7 @@ public class FactCheckAdapter extends RecyclerView.Adapter<FactCheckAdapter.Fact
         TextView publisherNameV;
         TextView publisherSiteV;
         CardView card;
+        LinearLayout colourIndicator;
 
         public FactCheckViewHolder(View itemView, final OnItemClickListener listener) {
             //Usual setup
@@ -49,14 +51,11 @@ public class FactCheckAdapter extends RecyclerView.Adapter<FactCheckAdapter.Fact
 
             //Connecting item XML elements to variables
             claimTitleV = itemView.findViewById(R.id.fact_check_title);
-            claimDateV = itemView.findViewById(R.id.fact_check_date);
-            claimClaimantV = itemView.findViewById(R.id.fact_check_claimant);
-            claimSourceV = itemView.findViewById(R.id.fact_check_source);
             claimReviewDateV = itemView.findViewById(R.id.fact_check_reviewDate);
             claimRatingV = itemView.findViewById(R.id.fact_check_rating);
             publisherNameV = itemView.findViewById(R.id.fact_check_publisherName);
-            publisherSiteV = itemView.findViewById(R.id.fact_check_publisherSite);
             card = itemView.findViewById(R.id.card);
+            colourIndicator = itemView.findViewById(R.id.colorIndicator);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -91,25 +90,28 @@ public class FactCheckAdapter extends RecyclerView.Adapter<FactCheckAdapter.Fact
     public void onBindViewHolder(@NonNull FactCheckViewHolder holder, int position) {
         Claim claim = claimsList.get(position);
         System.out.println(claim);
-        holder.claimTitleV.setText(claim.title);
-        holder.claimDateV.setText(claim.claimDate);
-        holder.claimClaimantV.setText(claim.claimant);
-        holder.claimSourceV.setText(claim.source);
         holder.claimReviewDateV.setText(claim.reviewDate);
         holder.claimRatingV.setText(claim.claimRating);
 
         // TODO: CHANGE COLOURS
         // Change the colour of the card depending on if it's true/false
         if (claim.claimRating.toLowerCase().contains("true")) {
-            holder.card.setCardBackgroundColor(Color.parseColor("#0978BE"));
-        } else if (claim.claimRating.toLowerCase().contains("false") || claim.claimRating.toLowerCase().contains("fire") || claim.claimRating.toLowerCase().contains("incorrect")) {
-            holder.card.setCardBackgroundColor(Color.parseColor("#FF0000"));
+            holder.colourIndicator.setBackgroundColor(Color.parseColor("#4ABD80"));
+            holder.claimRatingV.setTextColor(Color.parseColor("#4ABD80"));
+        } else if (claim.claimRating.toLowerCase().contains("false") || claim.claimRating.toLowerCase().contains("fire") || claim.claimRating.toLowerCase().contains("incorrect") || claim.claimRating.toLowerCase().contains("misleading")) {
+            holder.colourIndicator.setBackgroundColor(Color.parseColor("#DE1F1F"));
+            holder.claimRatingV.setTextColor(Color.parseColor("#DE1F1F"));
+        } else if (claim.claimRating.toLowerCase().contains("half") || claim.claimRating.toLowerCase().contains("partly")){
+            holder.colourIndicator.setBackgroundColor(Color.parseColor("#FFCD0B"));
+            holder.claimRatingV.setTextColor(Color.parseColor("#FFCD0B"));
         } else {
-            holder.card.setCardBackgroundColor(Color.parseColor("#C4C4C4"));
+            holder.colourIndicator.setBackgroundColor(Color.parseColor("#FFCD0B"));
+            holder.claimRatingV.setTextColor(Color.parseColor("#FFCD0B"));
         }
 
-        holder.publisherNameV.setText(claim.publisherName);
-        holder.publisherSiteV.setText(claim.publisherSite);
+        holder.claimTitleV.setText(claim.title);
+        String Text = claim.publisherName + " rating:";
+        holder.publisherNameV.setText(Text);
 
     }
 
