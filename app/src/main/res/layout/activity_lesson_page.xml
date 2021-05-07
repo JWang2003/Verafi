@@ -32,153 +32,148 @@
                 android:scaleY="1.5"
                 android:id="@+id/lesson_page_back" />
 
-            <TextView
-                android:id="@+id/section_type"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:fontFamily="@font/avenir_regular"
-                android:text="Lesson"
-                android:textColor="@color/grey_text"
-                android:textSize="28sp"
-                android:gravity="center"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 app:layout_constraintTop_toBottomOf="@id/lesson_page_back"
->
+                tools:layout_editor_absoluteX="20dp">
 
                 <ImageButton
+                    android:id="@+id/lesson_top_icon_0"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/lesson_pic"
                     android:visibility="visible"
-                    android:src="@drawable/lesson_pic"
-                    app:tint="#C4C4C4"
-                    android:backgroundTint="#00000000"
-                    android:scaleType="fitCenter"
-                    android:id="@+id/lesson_top_icon_0"/>
+                    app:tint="#C4C4C4" />
 
                 <ImageButton
+                    android:id="@+id/lesson_top_icon_1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/lesson_pic"
                     android:visibility="visible"
-                    android:src="@drawable/lesson_pic"
-                    app:tint="#C4C4C4"
-                    android:backgroundTint="#00000000"
-                    android:scaleType="fitCenter"
-                    android:id="@+id/lesson_top_icon_1"/>
+                    app:tint="#C4C4C4" />
 
                 <ImageButton
+                    android:id="@+id/lesson_top_icon_2"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/lesson_pic"
                     android:visibility="visible"
-                    android:src="@drawable/lesson_pic"
-                    app:tint="#C4C4C4"
-                    android:backgroundTint="#00000000"
-                    android:scaleType="fitCenter"
-                    android:id="@+id/lesson_top_icon_2"/>
+                    app:tint="#C4C4C4" />
 
                 <ImageButton
+                    android:id="@+id/lesson_top_icon_3"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/lesson_pic"
                     android:visibility="visible"
-                    android:src="@drawable/lesson_pic"
-                    app:tint="#C4C4C4"
-                    android:backgroundTint="#00000000"
-                    android:scaleType="fitCenter"
-                    android:id="@+id/lesson_top_icon_3"/>
+                    app:tint="#C4C4C4" />
 
                 <ImageButton
+                    android:id="@+id/lesson_top_icon_4"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:visibility="gone"
-                    android:src="@drawable/lesson_pic"
-                    app:tint="#C4C4C4"
                     android:backgroundTint="#00000000"
                     android:scaleType="fitCenter"
-                    android:id="@+id/lesson_top_icon_4"/>
+                    android:src="@drawable/lesson_pic"
+                    android:visibility="gone"
+                    app:tint="#C4C4C4" />
 
                 <ImageButton
+                    android:id="@+id/lesson_top_icon_5"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:visibility="gone"
-                    android:src="@drawable/lesson_pic"
-                    app:tint="#C4C4C4"
                     android:backgroundTint="#00000000"
                     android:scaleType="fitCenter"
-                    android:id="@+id/lesson_top_icon_5"/>
+                    android:src="@drawable/lesson_pic"
+                    android:visibility="gone"
+                    app:tint="#C4C4C4" />
 
                 <ImageButton
+                    android:id="@+id/lesson_top_icon_6"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:visibility="gone"
-                    android:src="@drawable/lesson_pic"
-                    app:tint="#C4C4C4"
                     android:backgroundTint="#00000000"
                     android:scaleType="fitCenter"
-                    android:id="@+id/lesson_top_icon_6"/>
+                    android:src="@drawable/lesson_pic"
+                    android:visibility="gone"
+                    app:tint="#C4C4C4" />
 
                 <ImageButton
+                    android:id="@+id/lesson_top_icon_7"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:visibility="gone"
-                    android:src="@drawable/lesson_pic"
-                    app:tint="#C4C4C4"
                     android:backgroundTint="#00000000"
                     android:scaleType="fitCenter"
-                    android:id="@+id/lesson_top_icon_7"/>
+                    android:src="@drawable/lesson_pic"
+                    android:visibility="gone"
+                    app:tint="#C4C4C4" />
 
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/lesson_name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:fontFamily="@font/avenir_bold"
-                android:text="%LessonName%"
-                android:textColor="@color/black"
-                android:textSize="36sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_page_top_bar" />
+        <TextView
+            android:id="@+id/lesson_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/avenir_bold"
+            android:text="%LessonName%"
+            android:textColor="@color/black"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lesson_page_top_bar" />
 
-            <TextView
-                android:id="@+id/text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:fontFamily="@font/avenir_regular"
-                android:lineSpacingExtra="10sp"
-                android:text="%LessonContent%"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name" />
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/avenir_regular"
+            android:lineSpacingExtra="10sp"
+            android:text="%LessonContent%"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lesson_name" />
 
         <!-- Change visibility to Gone -->
         <TextView
             android:id="@+id/website"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="5dp"
             android:layout_marginRight="35dp"
             android:fontFamily="@font/avenir_regular"
@@ -195,9 +190,11 @@
             android:id="@+id/s_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
             android:fontFamily="@font/avenir_bold"
             android:text="Sources:"
             android:textColor="@color/grey_text"
@@ -207,21 +204,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/website" />
 
-            <TextView
-                android:id="@+id/sources"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:fontFamily="@font/avenir_regular"
-                android:lineSpacingExtra="4sp"
-                android:text="Sources"
-                android:textColor="@color/grey_text"
-                android:textSize="12sp"
-                android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/s_text" />
+        <TextView
+            android:id="@+id/sources"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/avenir_regular"
+            android:lineSpacingExtra="4sp"
+            android:text="Sources"
+            android:textColor="@color/grey_text"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/s_text" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/continue_card"

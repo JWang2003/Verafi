@@ -1,5 +1,6 @@
 package com.example.misinformation;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -146,11 +147,15 @@ public class MainActivity extends AppCompatActivity {
                     radioGroup.check(R.id.Learn);
                     topText.setText("Learn");
                     System.out.println("Learn fragment");
+                    learnPage.setTextColor(Color.parseColor("#FFFFFF"));
+                    factCheckPage.setTextColor(Color.parseColor("#000000"));
                 }
                 else {
                     radioGroup.check(R.id.go_factCheck);
                     topText.setText("Fact Check");
                     System.out.println("Fact check fragment");
+                    factCheckPage.setTextColor(Color.parseColor("#FFFFFF"));
+                    learnPage.setTextColor(Color.parseColor("#000000"));
                 }
             }
 

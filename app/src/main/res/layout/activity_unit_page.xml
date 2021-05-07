@@ -23,9 +23,11 @@
 
         <TextView
             android:id="@+id/unit_name"
-            android:layout_width="wrap_content"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
             android:autoSizeTextType="uniform"
             android:fontFamily="@font/avenir_bold"
             android:gravity="start|center_vertical"
@@ -50,20 +52,6 @@
             android:scaleY="1.5"
             android:id="@+id/unit_back"
             android:layout_marginLeft="20dp" />
-
-        <TextView
-            android:id="@+id/section_type"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/avenir_regular"
-            android:text="Unit"
-            android:textColor="@color/grey_text"
-            android:textSize="28sp"
-            android:gravity="center"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/unit_recycler_view"
