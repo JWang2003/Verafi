@@ -34,7 +34,6 @@ public class FactCheckFragment extends Fragment {
     FactCheckAPI factCheckAPI;
     FactCheckAdapter factCheckAdapter;
     private static FactCheckFragment instance; //The static has to stay for the whole thing to work
-    boolean lock = false;
     String prevClaimString = "";
     String claimString = "";
 

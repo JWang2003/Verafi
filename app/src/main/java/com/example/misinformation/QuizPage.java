@@ -23,7 +23,6 @@ public class QuizPage extends AppCompatActivity {
     TextView lessonName;
     TextView words;
     TextView website;
-    TextView s_text;
     TextView description;
     Button continue_button;
     ImageButton back_button;
@@ -32,7 +31,6 @@ public class QuizPage extends AppCompatActivity {
     DatabaseAccess db;
 
     String currentLessonID;
-    int currentSectionProgress;
     int currentSectionIndex;
     int lessonSize;
     int totalProgress;
@@ -98,7 +96,6 @@ public class QuizPage extends AppCompatActivity {
         lessonName.setText(currentSection.name);
         words = findViewById(R.id.text);
         website = findViewById(R.id.website);
-        s_text = findViewById(R.id.s_text);
         description = findViewById(R.id.description);
         description.setText(currentSection.content.getString("text"));
         buttonChoices.add(findViewById(R.id.option1));

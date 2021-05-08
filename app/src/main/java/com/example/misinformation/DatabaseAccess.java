@@ -14,7 +14,6 @@ import java.io.ByteArrayOutputStream;
 
 public class DatabaseAccess {
 
-    Context context;
     private SQLiteOpenHelper openHelper;
     private SQLiteDatabase db;
     private static com.example.misinformation.DatabaseAccess instance;
@@ -23,7 +22,6 @@ public class DatabaseAccess {
 
     private DatabaseAccess(Context context) {
         this.openHelper = new DatabaseOpenHelper(context);
-        this.context = context;
     }
 
     public static com.example.misinformation.DatabaseAccess getInstance(Context context) {

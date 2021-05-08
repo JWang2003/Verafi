@@ -23,7 +23,6 @@ public class LearnPageFragment extends Fragment {
     LearnFragmentRecyclerAdapter mAdapter;
 
     ArrayList<Unit> mUnitList;
-    DatabaseAccess databaseAccess;
     DataAccess dataAccess;
 
 
@@ -46,13 +45,10 @@ public class LearnPageFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         dataAccess = new DataAccess(getActivity());
-        databaseAccess = DatabaseAccess.getInstance(getActivity().getApplicationContext());
-
         mUnitList = dataAccess.getUnits();
         System.out.println(mUnitList);
 
         connectXML();
-
     }
 
     private void connectXML() {
@@ -89,7 +85,6 @@ public class LearnPageFragment extends Fragment {
         intent.putExtra("unit", selectedUnit);
         intent.putExtra("jsonArray", selectedUnit.lessons.toString());
         startActivity(intent);
-
     }
 
 }

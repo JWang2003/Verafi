@@ -27,7 +27,6 @@ public class UnitPage extends AppCompatActivity {
     UnitPageRecyclerAdapter mAdapter;
     ArrayList<Lesson> mLessonList;
     Unit unit;
-    Button nextPage;
     DataAccess dataAccess;
     DatabaseAccess databaseAccess;
     TextView unitName;

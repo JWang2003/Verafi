@@ -48,13 +48,11 @@ public class LearnFragmentRecyclerAdapter extends RecyclerView.Adapter<LearnFrag
         public ArrayList<LinearLayout> mLinearLayoutArray = new ArrayList<>();
         public ArrayList<TextView> mTextViewArray = new ArrayList<>();
         public ArrayList<TextView> mPercentageArray = new ArrayList<>();
-        public CardView unitCard;
         public ArrayList<CircularProgressIndicator> mProgBarArray = new ArrayList<>();
 
         public LearnFragmentViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
             mUnitName = itemView.findViewById(R.id.unit_name);
-            unitCard = itemView.findViewById(R.id.unit_card);
             mScrollViewLinearLayout = itemView.findViewById(R.id.scrollview_layout);
             mLinearLayoutArray.add(itemView.findViewById(R.id.main_unit_sub_linear_0));
             mLinearLayoutArray.add(itemView.findViewById(R.id.main_unit_sub_linear_1));
@@ -163,10 +161,6 @@ public class LearnFragmentRecyclerAdapter extends RecyclerView.Adapter<LearnFrag
             holder.mProgBarArray.get(i).setProgress(progress);
             holder.mPercentageArray.get(i).setText(progress + "%");
         }
-        // Make card grey to show it can't be clicked
-//        if (currentUnit.progress == -1) {
-//            holder.unitCard.setCardBackgroundColor(Color.parseColor("#C4C4C4"));
-//        }
     }
 
     @Override

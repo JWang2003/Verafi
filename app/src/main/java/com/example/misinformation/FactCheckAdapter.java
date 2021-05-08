@@ -32,29 +32,21 @@ public class FactCheckAdapter extends RecyclerView.Adapter<FactCheckAdapter.Fact
     public static class FactCheckViewHolder extends RecyclerView.ViewHolder {
 
         //Properties
-        View itemView;
         TextView claimTitleV;
-        TextView claimDateV;
-        TextView claimClaimantV;
-        TextView claimSourceV;
         TextView claimReviewDateV;
         TextView claimRatingV;
         TextView publisherNameV;
-        TextView publisherSiteV;
-        CardView card;
         LinearLayout colourIndicator;
 
         public FactCheckViewHolder(View itemView, final OnItemClickListener listener) {
             //Usual setup
             super(itemView);
-            this.itemView = itemView;
 
             //Connecting item XML elements to variables
             claimTitleV = itemView.findViewById(R.id.fact_check_title);
             claimReviewDateV = itemView.findViewById(R.id.fact_check_reviewDate);
             claimRatingV = itemView.findViewById(R.id.fact_check_rating);
             publisherNameV = itemView.findViewById(R.id.fact_check_publisherName);
-            card = itemView.findViewById(R.id.card);
             colourIndicator = itemView.findViewById(R.id.colorIndicator);
 
             itemView.setOnClickListener(new View.OnClickListener() {

@@ -26,22 +26,13 @@ import com.androidnetworking.AndroidNetworking;
 
 public class MainActivity extends AppCompatActivity {
 
-    DatabaseAccess db;
-    FactCheckAPI factCheckAPI;
-    Button submitButton;
-    EditText claim;
     DataAccess dataAccess;
     ArrayList<Unit> units;
     Button factCheckPage;
     Button learnPage;
-    Button nextPage;
-    TextView text;
     RadioGroup radioGroup;
     TextView topText;
-
-    private static final int NUM_PAGES = 2;
     private ViewPager viewPager;
-    private PagerAdapter pagerAdapter;
 
 
 
@@ -51,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
         AndroidNetworking.initialize(getApplicationContext());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        db = DatabaseAccess.getInstance(getApplicationContext());
-
 
         connectXML();
         onClickSetup();

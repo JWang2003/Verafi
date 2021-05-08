@@ -42,12 +42,6 @@ public class FactCheckAPI {
         apiCall();
     }
 
-    private void consecutiveSearch() {
-        currentPageToken = nextPageToken;
-        apiCall();
-    }
-
-
     private void apiCall() {
         AndroidNetworking.get("https://factchecktools.googleapis.com/v1alpha1/claims:search")
                 .addQueryParameter("key", "AIzaSyAMJ7rwRaewe6rhqmY1CHc0yP4HkO-jZc8")
